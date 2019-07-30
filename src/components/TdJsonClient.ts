@@ -1,20 +1,23 @@
+import { ApiRequest, Data, PlainObjectToModelTransformer } from '@airgram/core/types'
 import { createDeserializer, createSerializer } from '../helpers'
 import { TdJsonProxy } from './TdJsonProxy'
 
+type NativeData = (Data & { '@extra'?: string }) | null
+
 export interface ApiDeferred {
-  _: string
-  resolve: (result: Airgram.TdResponse) => any
-  reject: (error: Error) => any
+  _: string;
+  resolve: (result: Data) => unknown;
+  reject: (error: Error) => unknown;
 }
 
 export interface TdJsonClientConfig {
-  command?: string
-  logFilePath?: string | null
-  logMaxFileSize?: number | string
-  logVerbosityLevel?: number
-  handleUpdate: (update: Airgram.TdUpdate) => Promise<any>,
-  handleError: (error: any) => void,
-  models?: Airgram.PlainObjectToModelTransformer
+  command?: string;
+  logFilePath?: string | null;
+  logMaxFileSize?: number | string;
+  logVerbosityLevel?: number;
+  handleUpdate: (update: Data) => Promise<unknown>;
+  handleError: (error: Error | string) => void;
+  models?: PlainObjectToModelTransformer;
 }
 
 export class TdJsonClient {
@@ -22,25 +25,25 @@ export class TdJsonClient {
 
   private _tdlibClient?: Buffer
 
-  private readonly deserialize: (key: string, value: any) => Record<string, any>
+  private readonly deserialize: (key: string, value: unknown) => Record<string, unknown>
 
   private destroyed: boolean = false
 
-  private readonly handleError: (error: any) => void
+  private readonly handleError: (error: Error | string) => void
 
-  private readonly handleUpdate: (update: Airgram.TdUpdate) => Promise<any>
+  private readonly handleUpdate: (update: Data) => Promise<unknown>
 
   private readonly pending: Map<string, ApiDeferred> = new Map()
 
   private queryId: number = 0
 
-  private readonly serialize: (key: string, value: any) => Record<string, any>
+  private readonly serialize: (key: string, value: unknown) => Record<string, unknown>
 
   private sleepPromise: Promise<void> | null = null
 
-  private stack: Airgram.TdResponse[] = []
+  private stack: NonNullable<NativeData>[] = []
 
-  private readonly tdlib: TdJsonProxy<any>
+  private readonly tdlib: TdJsonProxy
 
   private wakeup: (() => void) | null = null
 
@@ -49,7 +52,7 @@ export class TdJsonClient {
     this.handleError = config.handleError
     this.serialize = createSerializer()
     this.deserialize = createDeserializer(config.models)
-    this.tdlib = new TdJsonProxy<any>({ command: config.command })
+    this.tdlib = new TdJsonProxy({ command: config.command })
 
     if (config.logFilePath) {
       this.tdlib.setLogFilePath(config.logFilePath)
@@ -67,11 +70,8 @@ export class TdJsonClient {
     })
   }
 
-  get tdlibClient (): Buffer {
-    if (!this._tdlibClient) {
-      this._tdlibClient = this.tdlib.create()
-    }
-    return this._tdlibClient!
+  public get tdlibClient (): Buffer {
+    return this._tdlibClient || (this._tdlibClient = this.tdlib.create())
   }
 
   public destroy (): void {
@@ -97,27 +97,27 @@ export class TdJsonClient {
     }
   }
 
-  public send (request: Airgram.ApiRequest): Promise<Airgram.TdResponse> {
+  public send (request: ApiRequest): Promise<Data> {
     const id = `q${++this.queryId}`
     const { method, params } = request
-    return new Promise<Airgram.TdResponse>((resolve, reject) => {
+    return new Promise<Data>((resolve, reject) => {
       this.pending.set(id, { _: method, resolve, reject })
       return this.tdlib.send(this.tdlibClient, JSON.stringify({
         ...params,
         '@extra': id,
-        '_': method
+        _: method
       }, this.serialize))
     })
   }
 
   protected async handleResponse (): Promise<void> {
-    const response: Airgram.TdResponse | undefined = this.stack.shift()
+    const response = this.stack.shift()
 
     if (!response) {
       return Promise.resolve()
     }
 
-    const { '@extra': requestId } = response
+    const requestId = response['@extra']
     const deferred = requestId && this.pending.get(requestId)
 
     delete response['@extra']
@@ -132,15 +132,19 @@ export class TdJsonClient {
     setTimeout(() => this.handleResponse(), 0)
   }
 
-  protected async receive (): Promise<Airgram.TdResponse | null> {
+  protected async receive (): Promise<NativeData | null> {
     try {
-      return JSON.parse((await this.tdlib.receive(this.tdlibClient, this.timeout))!, this.deserialize)
+      const data: string | null = await this.tdlib.receive(this.tdlibClient, this.timeout)
+      if (data === null) {
+        return null
+      }
+      return JSON.parse(data, this.deserialize)
     } catch (e) {
       throw new Error(`[TdJsonClient] received invalid JSON`)
     }
   }
 
-  private addToStack (response: any): void {
+  private addToStack (response: NativeData): void {
     if (response && !this.destroyed) {
       this.stack.push(response)
       if (this.stack.length === 1) {

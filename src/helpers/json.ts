@@ -1,14 +1,17 @@
-import * as camelCase from 'lodash/camelCase'
-import * as snakeCase from 'lodash/snakeCase'
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
+import { PlainObjectToModelTransformer } from '@airgram/core/types'
+import camelCase from 'lodash/camelCase'
+import snakeCase from 'lodash/snakeCase'
 
 const keyMap: Map<string, string> = new Map<string, string>()
 
 export function createDeserializer (
-  models?: Airgram.PlainObjectToModelTransformer
-): (key: string, value: any) => Record<string, any> {
-  return (key, value) => {
+  models?: PlainObjectToModelTransformer
+): (key: string, value: any) => Record<string, Record<string, unknown>> {
+  return (_key, value) => {
     if (value && typeof value === 'object' && !Array.isArray(value)) {
-      const replacement: Record<string, any> = {}
+      const replacement: Record<string, unknown> = {}
       for (const k in value) {
         // console.info('unserialize', k)
         if (Object.hasOwnProperty.call(value, k)) {
@@ -23,10 +26,12 @@ export function createDeserializer (
             replacement[k] = value[k]
             continue
           }
-          if (!keyMap.has(k)) {
-            keyMap.set(k, camelCase(k))
+          let key = keyMap.get(k)
+          if (key == null) {
+            key = camelCase(k)
+            keyMap.set(k, key)
           }
-          replacement[keyMap.get(k)!] = value[k]
+          replacement[key] = value[k]
         }
       }
       return models ? models(replacement) : replacement
@@ -35,10 +40,10 @@ export function createDeserializer (
   }
 }
 
-export function createSerializer (): (key: string, value: any) => Record<string, any> {
-  return (key, value) => {
+export function createSerializer (): (key: string, value: any) => Record<string, unknown> {
+  return (_key, value) => {
     if (value && typeof value === 'object' && !Array.isArray(value)) {
-      const replacement: Record<string, any> = {}
+      const replacement: Record<string, unknown> = {}
       for (const k in value) {
         if (Object.hasOwnProperty.call(value, k)) {
           if (k === '_') {
@@ -52,10 +57,12 @@ export function createSerializer (): (key: string, value: any) => Record<string,
             replacement[k] = value[k]
             continue
           }
-          if (!keyMap.has(k)) {
-            keyMap.set(k, snakeCase(k))
+          let key = keyMap.get(k)
+          if (key == null) {
+            key = snakeCase(k)
+            keyMap.set(k, key)
           }
-          replacement[keyMap.get(k)!] = value[k]
+          replacement[key] = value[k]
         }
       }
       return replacement

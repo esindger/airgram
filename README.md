@@ -14,7 +14,7 @@ You may also be interested in:
 - Built on middleware;
 - Authorization helper;
 
-All TDLib classes and methods are described and have suitable wrappers in Airgram. There are only two differences:
+All TDLib classes and methods are described and have suitable wrappers in  There are only two differences:
 - All parameter names are represent in "camelCase".
 - Parameter `@type` renamed to `_`.
 
@@ -269,15 +269,15 @@ You can extend default context by define `contextFactory`:
 import { Airgram, createContext, User } from 'airgram'
 import { UPDATE } from '@airgram/api'
 
-interface Context extends Airgram.Context {
+interface Context extends Context {
   getUser (id: number): User | void
   setUser (id: number, user: User): void
 }
 
 const userMap: Map<number, User> = new Map()
 
-const contextFactory: Airgram.ContextFactory = () => {
-  return (options: Airgram.ContextOptions): Context => ({
+const contextFactory: ContextFactory = () => {
+  return (options: ContextOptions): Context => ({
     ...createContext(options),
     getUser (id: number): User | void {
       return userMap.get(id)

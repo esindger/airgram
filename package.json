@@ -18,7 +18,7 @@
     "compile": "npm run clean && tsc",
     "deploy": "np --yolo",
     "dev": "nodemon --config nodemon.json",
-    "lint": "tslint --project \".\"",
+    "lint": "eslint --fix ./src/**/*.ts",
     "prepublishOnly": "npm run compile",
     "test": "jest"
   },
@@ -27,20 +27,22 @@
   "license": "GPL-3.0",
   "repository": "https://github.com/airgram/airgram",
   "dependencies": {
-    "@airgram/api": "^1.2.0",
-    "@airgram/core": "^1.2.0",
+    "@airgram/constants": "^1.4.0",
+    "@airgram/core": "^2.0.0-0",
     "ffi-napi": "^2.4.5",
     "lodash": "^4.17.15"
   },
   "devDependencies": {
+    "@airgram/use-models": "^2.0.0-0",
     "@types/ffi-napi": "^2.4.1",
     "@types/jest": "^24.0.15",
+    "@types/lodash": "^4.14.136",
     "@types/node": "^12.0.10",
-    "airgram-use-models": "^1.1.0",
+    "@typescript-eslint/eslint-plugin": "^1.13.0",
+    "@typescript-eslint/parser": "^1.13.0",
     "eslint": "^6.0.1",
-    "eslint-config-standard": "^12.0.0",
-    "eslint-friendly-formatter": "^4.0.1",
-    "eslint-plugin-import": "^2.18.0",
+    "eslint-config-standard": "^13.0.1",
+    "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-node": "^9.1.0",
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.0",
@@ -50,9 +52,6 @@
     "pre-commit": "^1.2.2",
     "ts-jest": "^24.0.2",
     "ts-node": "^8.3.0",
-    "tslint": "^5.18.0",
-    "tslint-config-standard": "^8.0.1",
-    "tslint-eslint-rules": "^5.4.0",
-    "typescript": "^3.5.2"
+    "typescript": "^3.5.3"
   }
 }

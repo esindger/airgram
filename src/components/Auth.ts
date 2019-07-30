@@ -1,28 +1,38 @@
+import { AUTHORIZATION_STATE } from '@airgram/constants'
+import { Composer } from '@airgram/core'
 import {
-  AUTHORIZATION_STATE,
+  ApiResponse,
   AuthorizationStateUnion,
   AuthorizationStateWaitCode,
-  Error as TdError, ErrorUnion,
+  BaseData,
+  CheckAuthenticationCodeParams,
+  CheckAuthenticationPasswordParams,
+  ErrorUnion,
+  Instance,
+  MiddlewareFn,
+  Ok,
+  OkUnion,
+  TdLibConfig,
   UpdateAuthorizationState
-} from '@airgram/api'
-import { Airgram, Composer } from '@airgram/core'
-import * as pick from 'lodash/pick'
+} from '@airgram/core/types'
+import pick from 'lodash/pick'
+import { TdJsonProvider } from './TdJsonProvider'
 
 interface LoginDeferred {
-  promise: Promise<void>,
-  resolve: () => any
-  reject: (error: Error) => any
+  promise: Promise<void>;
+  resolve: () => unknown;
+  reject: (error: Error) => unknown;
 }
 
 type AuthAnswer = string | (() => string) | (() => Promise<string>)
 
 interface AuthDialog {
-  code?: AuthAnswer
-  firstName?: AuthAnswer
-  lastName?: AuthAnswer,
-  phoneNumber?: AuthAnswer
-  password?: AuthAnswer,
-  token?: AuthAnswer
+  code?: AuthAnswer;
+  firstName?: AuthAnswer;
+  lastName?: AuthAnswer;
+  phoneNumber?: AuthAnswer;
+  password?: AuthAnswer;
+  token?: AuthAnswer;
 }
 
 const AUTH_METHODS = [
@@ -38,9 +48,11 @@ const AUTH_METHODS = [
 ]
 
 export class Auth {
-  public maxAttempts: 3
+  public maxAttempts: number = 3
 
-  private answers: Partial<Record<keyof AuthDialog, any>> = {}
+  private airgram: Instance<unknown>
+
+  private answers: Partial<Record<keyof AuthDialog, string>> = {}
 
   private attempt: number = 0
 
@@ -52,7 +64,8 @@ export class Auth {
 
   private invalidPhoneNumbers: Set<string> = new Set()
 
-  constructor (private airgram: Airgram.AirgramInstance<any>, dialog?: AuthDialog) {
+  public constructor (airgram: Instance<unknown>, dialog?: AuthDialog) {
+    this.airgram = airgram
     airgram.use(this.middleware())
     if (dialog) {
       this.use(dialog)
@@ -67,26 +80,31 @@ export class Auth {
     return 'token' in this.dialog
   }
 
-  public ready (): Promise<void>
-  public ready (fn: () => any): void
-  public ready (fn?: () => any): Promise<void> | void {
+  public ready (): Promise<unknown>
+
+  // eslint-disable-next-line no-dupe-class-members
+  public ready (fn: () => unknown): unknown
+
+  // eslint-disable-next-line no-dupe-class-members
+  public ready (fn?: () => unknown): Promise<unknown> | unknown {
     if (fn) {
       return this.login().then(fn)
     }
     return this.login()
   }
 
-  public use (dialog: AuthDialog) {
+  public use (dialog: AuthDialog): void {
     this.dialog = dialog
   }
 
-  private async ask (type: keyof AuthDialog): Promise<any> {
-    if (!this.dialog[type]) {
-      throw new Error(`Answer for the "${type}" does not specified.`)
+  private async ask (type: keyof AuthDialog): Promise<string> {
+    if (!(type in this.dialog) || !this.dialog[type]) {
+      throw new Error(`The "${type}" option does not specified.`)
     }
-    return typeof this.dialog[type] === 'function'
-      ? (this.dialog[type] as () => string)()
-      : this.dialog[type]
+    if (typeof this.dialog[type] === 'function') {
+      return (this.dialog[type] as () => string)()
+    }
+    return this.dialog[type] as string
   }
 
   private async askPhoneNumber (): Promise<string> {
@@ -104,19 +122,33 @@ export class Auth {
       })
   }
 
-  private async checkAuthenticationPassword (): Promise<void> {
-    await this.airgram.api.checkAuthenticationPassword({
+  private async checkAuthenticationPassword (): Promise<ApiResponse<CheckAuthenticationPasswordParams, Ok>> {
+    return this.airgram.api.checkAuthenticationPassword({
       password: await this.ask('password')
     })
   }
 
-  private async handleError (error: TdError): Promise<boolean> {
-    let promise: Promise<any> | null = null
+  private async fatalError (error: Error): Promise<false> {
+    console.error(`[Airgram Auth] quit due an error: "${error.message}"`)
+    if (this.airgram.provider instanceof TdJsonProvider) {
+      await this.airgram.provider.destroy()
+    }
+    return false
+  }
+
+  private async handleError (error: ErrorUnion): Promise<boolean> {
+    let promise: Promise<ApiResponse<unknown, Ok>> | null = null
+
+    if (error.code === 429) {
+      return this.fatalError(new Error(error.message))
+    }
 
     switch (error.message) {
       case 'PHONE_NUMBER_INVALID': {
-        this.invalidPhoneNumbers.add(this.answers.phoneNumber)
-        delete this.answers.phoneNumber
+        if (this.answers.phoneNumber) {
+          this.invalidPhoneNumbers.add(this.answers.phoneNumber)
+          delete this.answers.phoneNumber
+        }
         promise = this.askPhoneNumber()
           .then((phoneNumber) => this.airgram.api.setAuthenticationPhoneNumber({ phoneNumber }))
         break
@@ -129,7 +161,7 @@ export class Auth {
           promise = this.sendCode(
             !!(this.authState && (this.authState as AuthorizationStateWaitCode).isRegistered))
         } else {
-          this.airgram.handleError(new Error('Exceeded the limit of failed attempts'), error)
+          return this.fatalError(new Error('Exceeded the limit of failed attempts'))
         }
         break
       }
@@ -138,7 +170,7 @@ export class Auth {
           this.attempt += 1
           promise = this.checkAuthenticationPassword()
         } else {
-          this.airgram.handleError(new Error('Exceeded the limit of failed attempts'), error)
+          return this.fatalError(new Error('Exceeded the limit of failed attempts'))
         }
         break
       }
@@ -147,19 +179,24 @@ export class Auth {
       }
     }
     return promise
-      ? promise.then(() => true).catch((e) => this.airgram.handleError(e, error))
+      ? promise.then((ctx) => {
+        if (ctx.error) {
+          this.handleError(ctx.error)
+          return false
+        }
+        return true
+      }).catch((error: Error) => this.fatalError(error))
       : true
   }
 
   private async handleUpdateState ({ authorizationState }: UpdateAuthorizationState): Promise<boolean> {
     this.attempt = 0
     this.authState = authorizationState
-
-    let promise: Promise<any> | null = null
+    let promise: Promise<ApiResponse<unknown, Ok>> | null = null
 
     switch (authorizationState._) {
       case 'authorizationStateWaitTdlibParameters': {
-        const keys: Array<keyof Airgram.TdLibConfig> = [
+        const keys: (keyof TdLibConfig)[] = [
           'useTestDc',
           'databaseDirectory',
           'filesDirectory',
@@ -218,50 +255,47 @@ export class Auth {
       }
     }
 
-    return promise ? promise.then(() => true)
-      .catch((error) => this.airgram.handleError(error, authorizationState))
-      .catch(() => {
-        // do nothing
-      }) : true
+    return promise ? promise.then((ctx) => {
+        if (ctx.error) {
+          this.handleError(ctx.error)
+          return false
+        }
+        return true
+      }).catch((error: Error) => this.fatalError(error))
+      : true
   }
 
   private async login (): Promise<void> {
     if (!this.deferred) {
-      const deferred: Record<string, any> = {}
+      const deferred: Partial<LoginDeferred> = {}
       deferred.promise = new Promise<void>((resolve, reject) => {
         deferred.resolve = resolve
         deferred.reject = reject
       })
       this.deferred = deferred as LoginDeferred
       if (!this.authState) {
-        this.authState = await this.airgram.api.getAuthorizationState()
+        const { response: authState } = await this.airgram.api.getAuthorizationState()
+        this.authState = authState || null
       }
     }
     return this.deferred.promise
   }
 
-  private middleware (): Airgram.MiddlewareFn<any> {
+  private middleware (): MiddlewareFn<unknown> {
     return Composer.compose([
-      // (ctx, next) => {
-      //   return next()
-      // },
-      Composer.filter((ctx) => !('update' in ctx)
-        || !ctx.update
-        || ctx.update._ !== 'updateAuthorizationState'
-        || !this.handleUpdateState(ctx.update)
-      ),
-      Composer.filter((ctx) => !ctx.update
-        || ctx.update._ !== 'error'
-        || !this.handleError(ctx.update)
+      Composer.filter((ctx: | { update?: UpdateAuthorizationState }) => !('update' in ctx) ||
+        !ctx.update ||
+        ctx.update._ !== 'updateAuthorizationState' ||
+        !this.handleUpdateState(ctx.update)
       ),
       Composer.optional(
-        (ctx) => !this.isAuthorized && !AUTH_METHODS.includes(ctx._),
-        (ctx, next) => this.login().then(next)
+        (ctx: BaseData) => !this.isAuthorized && !AUTH_METHODS.includes(ctx._),
+        (_ctx, next) => this.login().then(next)
       )
     ])
   }
 
-  private async sendCode (isRegistered: boolean): Promise<any> {
+  private async sendCode (isRegistered: boolean): Promise<ApiResponse<CheckAuthenticationCodeParams, OkUnion>> {
     const code = await this.ask('code')
     if (!code || !/^\d+$/.test(code)) {
       throw new Error('Invalid authorization code')

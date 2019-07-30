@@ -1,4 +1,6 @@
-import { useModels } from 'airgram-use-models'
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
+import { useModels } from '@airgram/use-models'
 import { createDeserializer, createSerializer } from '../helpers'
 
 test('prepare params for tdlib', () => {
@@ -31,7 +33,7 @@ test('parse false response', () => {
 
 test('use models', () => {
   class MyModelClass {
-    public id: number
+    public id!: number
 
     public testField = true
   }

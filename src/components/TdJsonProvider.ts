@@ -1,13 +1,18 @@
-import { Airgram, TdProvider } from '@airgram/core'
+import { TdProvider } from '@airgram/core'
+import { ApiRequest, Data, PlainObjectToModelTransformer } from '@airgram/core/types'
 import { TdJsonClient, TdJsonClientConfig } from './TdJsonClient'
 
-export type TdJsonProviderConfig = Airgram.Omit<TdJsonClientConfig, 'handleUpdate' | 'handleError' | 'models'>
+export type TdJsonProviderConfig = Omit<TdJsonClientConfig, 'handleUpdate' | 'handleError' | 'models'>
 
 export class TdJsonProvider extends TdProvider<TdJsonClient> {
-  public constructor (private config: TdJsonProviderConfig = {}) {
+  private readonly config: TdJsonProviderConfig
+
+  public constructor (config: TdJsonProviderConfig = {}) {
     super()
+    this.config = config
   }
 
+  // noinspection JSUnusedGlobalSymbols
   public destroy (): void {
     if (this.client) {
       this.client.destroy()
@@ -15,26 +20,28 @@ export class TdJsonProvider extends TdProvider<TdJsonClient> {
   }
 
   public initialize (
-    handleUpdate: (update: Airgram.TdUpdate) => Promise<any>,
-    handleError: (error: any) => void,
-    models?: Airgram.PlainObjectToModelTransformer
+    handleUpdate: (update: Data) => Promise<unknown>,
+    handleError: (error: Error | string) => void,
+    models?: PlainObjectToModelTransformer
   ): void {
     this.client = new TdJsonClient({ ...this.config, handleUpdate, handleError, models })
   }
 
+  // noinspection JSUnusedGlobalSymbols
   public pause (): void {
     if (this.client) {
       this.client.pause()
     }
   }
 
+  // noinspection JSUnusedGlobalSymbols
   public resume (): void {
     if (this.client) {
       this.client.resume()
     }
   }
 
-  public send (request: Airgram.ApiRequest): Promise<Airgram.TdResponse> {
+  public send (request: ApiRequest): Promise<Data> {
     if (!this.client) {
       throw new Error('TdJsonClient is not initialized.')
     }
