@@ -12,10 +12,8 @@ import {
   MiddlewareFn,
   Ok,
   OkUnion,
-  TdLibConfig,
   UpdateAuthorizationState
 } from '@airgram/core/types'
-import pick from 'lodash/pick'
 import { TdJsonProvider } from './TdJsonProvider'
 
 interface LoginDeferred {
@@ -195,35 +193,6 @@ export class Auth {
     let promise: Promise<ApiResponse<unknown, Ok>> | null = null
 
     switch (authorizationState._) {
-      case 'authorizationStateWaitTdlibParameters': {
-        const keys: (keyof TdLibConfig)[] = [
-          'useTestDc',
-          'databaseDirectory',
-          'filesDirectory',
-          'useFileDatabase',
-          'useChatInfoDatabase',
-          'useMessageDatabase',
-          'useSecretChats',
-          'apiId',
-          'apiHash',
-          'systemLanguageCode',
-          'deviceModel',
-          'systemVersion',
-          'applicationVersion',
-          'enableStorageOptimizer',
-          'ignoreFileNames'
-        ]
-        promise = this.airgram.api.setTdlibParameters({
-          parameters: { _: 'tdlibParameters', ...pick(this.airgram.config, keys) }
-        })
-        break
-      }
-      case 'authorizationStateWaitEncryptionKey': {
-        promise = this.airgram.api.checkDatabaseEncryptionKey({
-          encryptionKey: this.airgram.config.databaseEncryptionKey
-        })
-        break
-      }
       case 'authorizationStateWaitPhoneNumber': {
         if (this.isBot) {
           const token = await this.ask('token')
