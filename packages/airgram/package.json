@@ -26,8 +26,8 @@
   "license": "GPL-3.0",
   "repository": "https://github.com/airgram/airgram",
   "dependencies": {
-    "@airgram/constants": "link:../airgram-constants",
-    "@airgram/core": "link:../airgram-core",
+    "@airgram/constants": "file:../airgram-constants",
+    "@airgram/core": "file:../airgram-core",
     "ffi-napi": "^2.4.5",
     "lodash": "^4.17.15"
   },

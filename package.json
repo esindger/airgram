@@ -1,10 +1,17 @@
 {
   "name": "root",
   "private": false,
+  "author": "Alexander Krisko",
+  "license": "GPL-3.0",
+  "repository": "https://github.com/airgram/airgram",
   "scripts": {
-    "install": "lerna exec npm install"
+    "install": "lerna exec npm install",
+    "commit": "commit"
   },
   "devDependencies": {
+    "@commitlint/cli": "^8.1.0",
+    "@commitlint/config-conventional": "^8.1.0",
+    "@commitlint/prompt-cli": "^8.1.0",
     "@types/gulp-replace": "0.0.31",
     "@types/gulp-shell": "0.0.31",
     "@types/jest": "^24.0.15",

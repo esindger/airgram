@@ -21,7 +21,7 @@
   "license": "GPL-3.0",
   "repository": "https://github.com/airgram",
   "dependencies": {
-    "@airgram/core": "link:../airgram-core",
+    "@airgram/core": "file:../airgram-core",
     "class-transformer": "^0.2.3",
     "reflect-metadata": "^0.1.13"
   }

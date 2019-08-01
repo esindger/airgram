@@ -9,7 +9,9 @@
     "version": {
       "changelog": false,
       "conventionalCommits": true,
-      "message": "chore(release): publish %s 🚀"
+      "conventional-prerelease": true,
+      "message": "chore(release): publish %s 🚀",
+      "preid": "next"
     },
     "publish": {
       "contents": "dist",
@@ -25,5 +27,5 @@
   "packages": [
     "packages/*"
   ],
-  "version": "2.0.0-2"
+  "version": "2.0.0"
 }
