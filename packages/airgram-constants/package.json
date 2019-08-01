@@ -1,5 +1,5 @@
 {
-  "name": "@airgram/constants",
+  "name": "@airgram-dev/constants",
   "version": "1.4.0",
   "homepage": "https://airgram.io",
   "main": "index.js",

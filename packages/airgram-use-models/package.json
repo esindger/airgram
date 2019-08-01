@@ -1,5 +1,5 @@
 {
-  "name": "@airgram/use-models",
+  "name": "@airgram-dev/use-models",
   "version": "2.0.0-1",
   "homepage": "https://airgram.io",
   "main": "dist/index.js",
