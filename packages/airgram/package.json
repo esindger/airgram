@@ -1,0 +1,40 @@
+{
+  "name": "airgram",
+  "version": "2.0.0-0",
+  "homepage": "https://airgram.io",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "keywords": [
+    "telegram",
+    "tdlib",
+    "telegram bot",
+    "telegram client",
+    "telegram javascript",
+    "telegram typescript"
+  ],
+  "sideEffects": false,
+  "scripts": {
+    "clean": "rm -rf dist",
+    "build": "npm run clean && tsc",
+    "dev": "nodemon --config nodemon.json",
+    "lint": "eslint --fix ./src/**/*.ts",
+    "prepublishOnly": "npm run build",
+    "test": "jest"
+  },
+  "pre-commit": "lint",
+  "author": "Alexander Krisko",
+  "license": "GPL-3.0",
+  "repository": "https://github.com/airgram/airgram",
+  "dependencies": {
+    "@airgram/constants": "link:../airgram-constants",
+    "@airgram/core": "link:../airgram-core",
+    "ffi-napi": "^2.4.5",
+    "lodash": "^4.17.15"
+  },
+  "devDependencies": {
+    "@airgram/use-models": "^2.0.0-1",
+    "@types/ffi-napi": "^2.4.1",
+    "@types/lodash": "^4.14.136",
+    "nodemon": "^1.19.1"
+  }
+}

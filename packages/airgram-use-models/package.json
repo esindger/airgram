@@ -1,0 +1,28 @@
+{
+  "name": "@airgram/use-models",
+  "version": "2.0.0-1",
+  "homepage": "https://airgram.io",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "keywords": [
+    "airgram models"
+  ],
+  "sideEffects": false,
+  "scripts": {
+    "clean": "rm -rf dist",
+    "compile": "npm run clean && tsc",
+    "deploy": "np --any-branch --yolo",
+    "lint": "eslint --fix ./src/**/*.ts",
+    "prepublishOnly": "npm run compile",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "pre-commit": "lint",
+  "author": "Alexander Krisko",
+  "license": "GPL-3.0",
+  "repository": "https://github.com/airgram",
+  "dependencies": {
+    "@airgram/core": "link:../airgram-core",
+    "class-transformer": "^0.2.3",
+    "reflect-metadata": "^0.1.13"
+  }
+}

@@ -10,15 +10,10 @@
     "esModuleInterop": true,
     "module": "commonjs",
     "sourceMap": true,
-    "rootDir": "src",
-    "outDir": "dist",
     "declaration": true,
     "lib": ["esnext", "dom"]
   },
   "exclude": [
-    "dev/**",
-    "dist/**",
-    "examples/**",
-    "*.dev.ts"
+    "packages/*/dist/**"
   ]
 }

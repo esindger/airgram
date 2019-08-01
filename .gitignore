@@ -100,7 +100,6 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
-dist
-dev
-dev/*
-*.dev.ts
+lerna-debug.log
+npm-debug.log
+packages/*/dist
