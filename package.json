@@ -9,9 +9,6 @@
     "commit": "commit"
   },
   "devDependencies": {
-    "@commitlint/cli": "^8.1.0",
-    "@commitlint/config-conventional": "^8.1.0",
-    "@commitlint/prompt-cli": "^8.1.0",
     "@types/gulp-replace": "0.0.31",
     "@types/gulp-shell": "0.0.31",
     "@types/jest": "^24.0.15",
