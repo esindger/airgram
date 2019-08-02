@@ -14,9 +14,7 @@
       "preid": "next"
     },
     "publish": {
-      "contents": "dist/package",
-      "ignoreScripts": true,
-      "preDistTag": "next"
+      "contents": "dist/package"
     },
     "bootstrap": {
       "npmClientArgs": [
