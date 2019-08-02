@@ -16,6 +16,9 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "pre-commit": "lint",
+  "publishConfig": {
+    "access": "public"
+  },
   "author": "Alexander Krisko",
   "license": "GPL-3.0",
   "repository": "https://github.com/airgram",
