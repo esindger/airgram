@@ -92,7 +92,6 @@ export class Gulpfile {
       .src('./package.json')
       .pipe(replace('"private": true', '"private": false'))
       .pipe(replace('dist/package/index', 'index'))
-      .pipe(replace('file:../', 'file:../../../'))
       .pipe(gulp.dest('./dist/package'))
   }
 

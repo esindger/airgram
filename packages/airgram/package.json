@@ -26,14 +26,14 @@
   "license": "GPL-3.0",
   "repository": "https://github.com/airgram/airgram",
   "dependencies": {
-    "@airgram/constants": "file:../airgram-constants",
-    "@airgram/core": "file:../airgram-core",
+    "@airgram/constants": "@airgram-dev/constants",
+    "@airgram/core": "@airgram-dev/airgram-core",
     "ffi-napi": "^2.4.5",
     "gulpfile": "^1.0.2",
     "lodash": "^4.17.15"
   },
   "devDependencies": {
-    "@airgram/use-models": "file:../airgram-use-models",
+    "@airgram/use-models": "@airgram-dev/airgram-use-models",
     "@types/ffi-napi": "^2.4.1",
     "@types/lodash": "^4.14.136",
     "nodemon": "^1.19.1"
