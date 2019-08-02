@@ -1,4 +1,4 @@
-import { BasicGroup } from '@airgram/core/types'
+import { BasicGroup } from '@airgram/core'
 
 /**
  * Some data of a basic group has changed. This update is guaranteed to come before

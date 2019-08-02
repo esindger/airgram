@@ -1,4 +1,4 @@
-import { Session } from '@airgram/core/types'
+import { Session } from '@airgram/core'
 
 /** Contains a list of sessions */
 export class SessionsBaseModel {

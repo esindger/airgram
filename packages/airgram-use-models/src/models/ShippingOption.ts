@@ -1,4 +1,4 @@
-import { LabeledPricePart } from '@airgram/core/types'
+import { LabeledPricePart } from '@airgram/core'
 
 /** One shipping option */
 export class ShippingOptionBaseModel {

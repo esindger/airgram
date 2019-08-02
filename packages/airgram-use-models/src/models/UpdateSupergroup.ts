@@ -1,4 +1,4 @@
-import { Supergroup } from '@airgram/core/types'
+import { Supergroup } from '@airgram/core'
 
 /**
  * Some data of a supergroup or a channel has changed. This update is guaranteed to

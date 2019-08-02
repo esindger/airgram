@@ -2,8 +2,8 @@
   "name": "airgram-dev",
   "version": "2.0.1",
   "homepage": "https://airgram.io",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "main": "dist/package/index.js",
+  "types": "dist/package/index.d.ts",
   "keywords": [
     "telegram",
     "tdlib",
@@ -14,11 +14,11 @@
   ],
   "sideEffects": false,
   "scripts": {
-    "clean": "rm -rf dist",
-    "build": "npm run clean && tsc",
+    "build": "gulp build",
     "dev": "nodemon --config nodemon.json",
+    "check": "tsc --noEmit",
     "lint": "eslint --fix ./src/**/*.ts",
-    "prepublishOnly": "npm run build",
+    "prepublishOnly": "gulp build",
     "test": "jest"
   },
   "pre-commit": "lint",
@@ -29,12 +29,14 @@
     "@airgram/constants": "file:../airgram-constants",
     "@airgram/core": "file:../airgram-core",
     "ffi-napi": "^2.4.5",
+    "gulpfile": "^1.0.2",
     "lodash": "^4.17.15"
   },
   "devDependencies": {
-    "@airgram/use-models": "^2.0.0-1",
+    "@airgram/use-models": "file:../airgram-use-models",
     "@types/ffi-napi": "^2.4.1",
     "@types/lodash": "^4.14.136",
     "nodemon": "^1.19.1"
-  }
+  },
+  "gitHead": "4edb9009448894d24d49907b25865350b50c3410"
 }

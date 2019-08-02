@@ -1,4 +1,4 @@
-import { CallDiscardReasonUnion } from '@airgram/core/types'
+import { CallDiscardReasonUnion } from '@airgram/core'
 
 /** A message with information about an ended call */
 export class MessageCallBaseModel {

@@ -1,4 +1,4 @@
-import { File } from '@airgram/core/types'
+import { File } from '@airgram/core'
 
 /** File with the date it was uploaded */
 export class DatedFileBaseModel {

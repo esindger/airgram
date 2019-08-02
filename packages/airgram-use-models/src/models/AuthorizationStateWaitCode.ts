@@ -1,4 +1,4 @@
-import { AuthenticationCodeInfo, TermsOfService } from '@airgram/core/types'
+import { AuthenticationCodeInfo, TermsOfService } from '@airgram/core'
 
 /** TDLib needs the user's authentication code to finalize authorization */
 export class AuthorizationStateWaitCodeBaseModel {

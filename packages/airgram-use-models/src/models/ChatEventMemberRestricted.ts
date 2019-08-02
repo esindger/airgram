@@ -1,4 +1,4 @@
-import { ChatMemberStatusUnion } from '@airgram/core/types'
+import { ChatMemberStatusUnion } from '@airgram/core'
 
 /**
  * A chat member was restricted/unrestricted or banned/unbanned, or the list of their

@@ -1,4 +1,4 @@
-import { FileTypeUnion } from '@airgram/core/types'
+import { FileTypeUnion } from '@airgram/core'
 
 /** Contains the storage usage statistics for a specific file type */
 export class StorageStatisticsByFileTypeBaseModel {

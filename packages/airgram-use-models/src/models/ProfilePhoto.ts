@@ -1,4 +1,4 @@
-import { File } from '@airgram/core/types'
+import { File } from '@airgram/core'
 
 /** Describes a user profile photo */
 export class ProfilePhotoBaseModel {

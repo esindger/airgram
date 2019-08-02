@@ -1,4 +1,4 @@
-import { ProxyTypeUnion } from '@airgram/core/types'
+import { ProxyTypeUnion } from '@airgram/core'
 
 /** Contains information about a proxy server */
 export class ProxyBaseModel {

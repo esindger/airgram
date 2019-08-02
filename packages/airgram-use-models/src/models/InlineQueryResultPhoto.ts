@@ -1,4 +1,4 @@
-import { Photo } from '@airgram/core/types'
+import { Photo } from '@airgram/core'
 
 /** Represents a photo */
 export class InlineQueryResultPhotoBaseModel {

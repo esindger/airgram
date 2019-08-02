@@ -1,4 +1,4 @@
-import { Video } from '@airgram/core/types'
+import { Video } from '@airgram/core'
 
 /** Represents a video */
 export class InlineQueryResultVideoBaseModel {

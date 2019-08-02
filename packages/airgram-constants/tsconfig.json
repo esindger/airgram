@@ -1,11 +1,11 @@
 {
   "extends": "../../tsconfig.json",
   "compilerOptions": {
-    "rootDir": "src",
     "outDir": "dist",
     "esModuleInterop": true
   },
-  "exclude": [
-    "dist"
+  "include": [
+    "./src",
+    "./examples"
   ]
 }

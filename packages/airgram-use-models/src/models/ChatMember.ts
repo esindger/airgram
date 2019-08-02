@@ -1,4 +1,4 @@
-import { BotInfo, ChatMemberStatusUnion } from '@airgram/core/types'
+import { BotInfo, ChatMemberStatusUnion } from '@airgram/core'
 
 /** A user with information about joining/leaving a chat */
 export class ChatMemberBaseModel {

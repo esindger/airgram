@@ -1,4 +1,4 @@
-import { FormattedText, Photo } from '@airgram/core/types'
+import { FormattedText, Photo } from '@airgram/core'
 
 /** A photo message */
 export class MessagePhotoBaseModel {

@@ -1,4 +1,4 @@
-import { Audio } from '@airgram/core/types'
+import { Audio } from '@airgram/core'
 
 /** An audio message */
 export class PushMessageContentAudioBaseModel {

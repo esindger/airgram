@@ -1,4 +1,4 @@
-import { SupergroupFullInfo } from '@airgram/core/types'
+import { SupergroupFullInfo } from '@airgram/core'
 
 /** Some data from supergroupFullInfo has been changed */
 export class UpdateSupergroupFullInfoBaseModel {

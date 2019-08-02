@@ -1,4 +1,4 @@
-import { NotificationGroup } from '@airgram/core/types'
+import { NotificationGroup } from '@airgram/core'
 
 /**
  * Contains active notifications that was shown on previous application launches. This

@@ -1,4 +1,4 @@
-import { Location, PageBlockCaption } from '@airgram/core/types'
+import { Location, PageBlockCaption } from '@airgram/core'
 
 /** A map */
 export class PageBlockMapBaseModel {

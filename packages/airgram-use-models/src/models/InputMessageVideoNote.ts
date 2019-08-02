@@ -1,4 +1,4 @@
-import { InputFileUnion, InputThumbnail } from '@airgram/core/types'
+import { InputFileUnion, InputThumbnail } from '@airgram/core'
 
 /** A video note message */
 export class InputMessageVideoNoteBaseModel {

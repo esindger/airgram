@@ -1,4 +1,4 @@
-import { Date, DatedFile } from '@airgram/core/types'
+import { Date, DatedFile } from '@airgram/core'
 
 /** An identity document */
 export class IdentityDocumentBaseModel {

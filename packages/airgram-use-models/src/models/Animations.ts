@@ -1,4 +1,4 @@
-import { Animation } from '@airgram/core/types'
+import { Animation } from '@airgram/core'
 
 /** Represents a list of animations */
 export class AnimationsBaseModel {

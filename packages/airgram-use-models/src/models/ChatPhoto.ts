@@ -1,4 +1,4 @@
-import { File } from '@airgram/core/types'
+import { File } from '@airgram/core'
 
 /** Describes the photo of a chat */
 export class ChatPhotoBaseModel {

@@ -1,6 +1,6 @@
 /* tslint:disable:no-empty */
 
-import { BaseData, Composer as BaseComposer, Middleware, MiddlewareFn } from '../../types'
+import { BaseData, Composer as BaseComposer, Middleware, MiddlewareFn } from '../types'
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export type NextFn = () => any

@@ -1,4 +1,4 @@
-import { InputMessageContentUnion } from '@airgram/core/types'
+import { InputMessageContentUnion } from '@airgram/core'
 
 /** Contains information about a message draft */
 export class DraftMessageBaseModel {

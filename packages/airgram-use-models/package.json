@@ -2,18 +2,17 @@
   "name": "@airgram-dev/use-models",
   "version": "2.0.1",
   "homepage": "https://airgram.io",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "main": "dist/package/index.js",
+  "types": "dist/package/index.d.ts",
   "keywords": [
     "airgram models"
   ],
   "sideEffects": false,
   "scripts": {
-    "clean": "rm -rf dist",
-    "compile": "npm run clean && tsc",
-    "deploy": "np --any-branch --yolo",
+    "build": "gulp build",
+    "check": "tsc --noEmit",
     "lint": "eslint --fix ./src/**/*.ts",
-    "prepublishOnly": "npm run compile",
+    "prepublishOnly": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "pre-commit": "lint",
@@ -24,5 +23,6 @@
     "@airgram/core": "file:../airgram-core",
     "class-transformer": "^0.2.3",
     "reflect-metadata": "^0.1.13"
-  }
+  },
+  "gitHead": "4edb9009448894d24d49907b25865350b50c3410"
 }

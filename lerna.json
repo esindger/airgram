@@ -14,7 +14,7 @@
       "preid": "next"
     },
     "publish": {
-      "contents": "dist",
+      "contents": "dist/package",
       "ignoreScripts": true,
       "preDistTag": "next"
     },

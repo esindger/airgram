@@ -1,4 +1,4 @@
-import { Error } from '@airgram/core/types'
+import { Error } from '@airgram/core'
 
 /** The call has ended with an error */
 export class CallStateErrorBaseModel {

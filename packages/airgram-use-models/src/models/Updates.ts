@@ -1,4 +1,4 @@
-import { UpdateUnion } from '@airgram/core/types'
+import { UpdateUnion } from '@airgram/core'
 
 /** Contains a list of updates */
 export class UpdatesBaseModel {

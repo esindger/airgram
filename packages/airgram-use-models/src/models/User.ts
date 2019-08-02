@@ -1,4 +1,9 @@
-import { LinkStateUnion, ProfilePhoto, UserStatusUnion, UserTypeUnion } from '@airgram/core/types'
+import {
+  LinkStateUnion,
+  ProfilePhoto,
+  UserStatusUnion,
+  UserTypeUnion
+} from '@airgram/core'
 
 /** Represents a user */
 export class UserBaseModel {

@@ -1,4 +1,4 @@
-import { FileTypeUnion, NetworkTypeUnion } from '@airgram/core/types'
+import { FileTypeUnion, NetworkTypeUnion } from '@airgram/core'
 
 /**
  * Contains information about the total amount of data that was used to send and receive

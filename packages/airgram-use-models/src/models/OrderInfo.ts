@@ -1,4 +1,4 @@
-import { Address } from '@airgram/core/types'
+import { Address } from '@airgram/core'
 
 /** Order information */
 export class OrderInfoBaseModel {

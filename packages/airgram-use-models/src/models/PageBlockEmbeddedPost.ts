@@ -1,4 +1,4 @@
-import { PageBlockCaption, PageBlockUnion, Photo } from '@airgram/core/types'
+import { PageBlockCaption, PageBlockUnion, Photo } from '@airgram/core'
 
 /** An embedded post */
 export class PageBlockEmbeddedPostBaseModel {

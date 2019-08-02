@@ -1,4 +1,4 @@
-import { PassportElementTypeUnion } from '@airgram/core/types'
+import { PassportElementTypeUnion } from '@airgram/core'
 
 /** Telegram Passport data has been sent */
 export class MessagePassportDataSentBaseModel {

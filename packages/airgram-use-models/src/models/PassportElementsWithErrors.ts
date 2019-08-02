@@ -1,4 +1,4 @@
-import { PassportElementError, PassportElementUnion } from '@airgram/core/types'
+import { PassportElementError, PassportElementUnion } from '@airgram/core'
 
 /** Contains information about a Telegram Passport elements and corresponding errors */
 export class PassportElementsWithErrorsBaseModel {

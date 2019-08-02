@@ -1,4 +1,4 @@
-import { KeyboardButton } from '@airgram/core/types'
+import { KeyboardButton } from '@airgram/core'
 
 /** Contains a custom keyboard layout to quickly reply to bots */
 export class ReplyMarkupShowKeyboardBaseModel {

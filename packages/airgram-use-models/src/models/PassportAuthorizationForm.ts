@@ -1,4 +1,4 @@
-import { PassportRequiredElement } from '@airgram/core/types'
+import { PassportRequiredElement } from '@airgram/core'
 
 /** Contains information about a Telegram Passport authorization form that was requested */
 export class PassportAuthorizationFormBaseModel {

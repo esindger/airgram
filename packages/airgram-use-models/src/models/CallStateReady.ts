@@ -1,4 +1,4 @@
-import { CallConnection, CallProtocol } from '@airgram/core/types'
+import { CallConnection, CallProtocol } from '@airgram/core'
 
 /** The call is ready to use */
 export class CallStateReadyBaseModel {

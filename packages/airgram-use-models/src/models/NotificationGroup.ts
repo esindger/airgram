@@ -1,4 +1,4 @@
-import { Notification, NotificationGroupTypeUnion } from '@airgram/core/types'
+import { Notification, NotificationGroupTypeUnion } from '@airgram/core'
 
 /** Describes a group of notifications */
 export class NotificationGroupBaseModel {

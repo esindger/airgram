@@ -1,4 +1,4 @@
-import { NetworkTypeUnion } from '@airgram/core/types'
+import { NetworkTypeUnion } from '@airgram/core'
 
 /** Contains information about the total amount of data that was used for calls */
 export class NetworkStatisticsEntryCallBaseModel {

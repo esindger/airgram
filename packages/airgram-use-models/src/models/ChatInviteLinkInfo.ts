@@ -1,4 +1,4 @@
-import { ChatPhoto, ChatTypeUnion } from '@airgram/core/types'
+import { ChatPhoto, ChatTypeUnion } from '@airgram/core'
 
 /** Contains information about a chat invite link */
 export class ChatInviteLinkInfoBaseModel {

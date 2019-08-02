@@ -1,4 +1,4 @@
-import { ChatActionUnion } from '@airgram/core/types'
+import { ChatActionUnion } from '@airgram/core'
 
 /** User activity in the chat has changed */
 export class UpdateUserChatActionBaseModel {

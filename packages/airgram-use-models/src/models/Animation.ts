@@ -1,4 +1,4 @@
-import { File, PhotoSize } from '@airgram/core/types'
+import { File, PhotoSize } from '@airgram/core'
 
 /** Describes an animation file. The animation must be encoded in GIF or MPEG4 format */
 export class AnimationBaseModel {

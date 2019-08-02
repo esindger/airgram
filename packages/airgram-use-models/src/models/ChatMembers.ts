@@ -1,4 +1,4 @@
-import { ChatMember } from '@airgram/core/types'
+import { ChatMember } from '@airgram/core'
 
 /** Contains a list of chat members */
 export class ChatMembersBaseModel {

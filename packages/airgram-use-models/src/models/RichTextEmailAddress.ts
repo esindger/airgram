@@ -1,4 +1,4 @@
-import { RichTextUnion } from '@airgram/core/types'
+import { RichTextUnion } from '@airgram/core'
 
 /** A rich text email link */
 export class RichTextEmailAddressBaseModel {

@@ -1,4 +1,4 @@
-import { KeyboardButtonTypeUnion } from '@airgram/core/types'
+import { KeyboardButtonTypeUnion } from '@airgram/core'
 
 /** Represents a single button in a bot keyboard */
 export class KeyboardButtonBaseModel {

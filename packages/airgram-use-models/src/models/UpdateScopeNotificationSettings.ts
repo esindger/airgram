@@ -1,4 +1,7 @@
-import { NotificationSettingsScopeUnion, ScopeNotificationSettings } from '@airgram/core/types'
+import {
+  NotificationSettingsScopeUnion,
+  ScopeNotificationSettings
+} from '@airgram/core'
 
 /** Notification settings for some type of chats were updated */
 export class UpdateScopeNotificationSettingsBaseModel {

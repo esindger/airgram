@@ -1,4 +1,4 @@
-import { LanguagePackStringValueUnion } from '@airgram/core/types'
+import { LanguagePackStringValueUnion } from '@airgram/core'
 
 /** Represents one language pack string */
 export class LanguagePackStringBaseModel {

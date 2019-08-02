@@ -1,4 +1,4 @@
-import { LanguagePackString } from '@airgram/core/types'
+import { LanguagePackString } from '@airgram/core'
 
 /** Contains a list of language pack strings */
 export class LanguagePackStringsBaseModel {

@@ -1,4 +1,4 @@
-import { UserPrivacySettingRules, UserPrivacySettingUnion } from '@airgram/core/types'
+import { UserPrivacySettingRules, UserPrivacySettingUnion } from '@airgram/core'
 
 /** Some privacy setting rules have been changed */
 export class UpdateUserPrivacySettingRulesBaseModel {

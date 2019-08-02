@@ -1,4 +1,4 @@
-import { OptionValueUnion } from '@airgram/core/types'
+import { OptionValueUnion } from '@airgram/core'
 
 /** An option changed its value */
 export class UpdateOptionBaseModel {

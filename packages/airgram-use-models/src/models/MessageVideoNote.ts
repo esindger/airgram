@@ -1,4 +1,4 @@
-import { VideoNote } from '@airgram/core/types'
+import { VideoNote } from '@airgram/core'
 
 /** A video note message */
 export class MessageVideoNoteBaseModel {

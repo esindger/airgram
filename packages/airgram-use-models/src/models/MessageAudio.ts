@@ -1,4 +1,4 @@
-import { Audio, FormattedText } from '@airgram/core/types'
+import { Audio, FormattedText } from '@airgram/core'
 
 /** An audio message */
 export class MessageAudioBaseModel {

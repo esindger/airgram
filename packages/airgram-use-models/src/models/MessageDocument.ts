@@ -1,4 +1,4 @@
-import { Document, FormattedText } from '@airgram/core/types'
+import { Document, FormattedText } from '@airgram/core'
 
 /** A document message (general file) */
 export class MessageDocumentBaseModel {

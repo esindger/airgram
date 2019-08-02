@@ -1,4 +1,4 @@
-import { CallDiscardReasonUnion } from '@airgram/core/types'
+import { CallDiscardReasonUnion } from '@airgram/core'
 
 /** The call has ended successfully */
 export class CallStateDiscardedBaseModel {

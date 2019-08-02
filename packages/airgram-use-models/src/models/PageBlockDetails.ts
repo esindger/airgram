@@ -1,4 +1,4 @@
-import { PageBlockUnion, RichTextUnion } from '@airgram/core/types'
+import { PageBlockUnion, RichTextUnion } from '@airgram/core'
 
 /** A collapsible block */
 export class PageBlockDetailsBaseModel {

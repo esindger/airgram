@@ -1,4 +1,4 @@
-import { PersonalDocument } from '@airgram/core/types'
+import { PersonalDocument } from '@airgram/core'
 
 /** A Telegram Passport element containing the user's bank statement */
 export class PassportElementBankStatementBaseModel {

@@ -1,4 +1,4 @@
-import { LocalFile, RemoteFile } from '@airgram/core/types'
+import { LocalFile, RemoteFile } from '@airgram/core'
 
 /** Represents a file */
 export class FileBaseModel {

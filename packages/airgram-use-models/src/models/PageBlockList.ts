@@ -1,4 +1,4 @@
-import { PageBlockListItem } from '@airgram/core/types'
+import { PageBlockListItem } from '@airgram/core'
 
 /** A list of data blocks */
 export class PageBlockListBaseModel {

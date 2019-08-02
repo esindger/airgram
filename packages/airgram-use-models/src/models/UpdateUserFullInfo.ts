@@ -1,4 +1,4 @@
-import { UserFullInfo } from '@airgram/core/types'
+import { UserFullInfo } from '@airgram/core'
 
 /** Some data from userFullInfo has been changed */
 export class UpdateUserFullInfoBaseModel {

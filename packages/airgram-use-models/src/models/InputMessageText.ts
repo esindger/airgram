@@ -1,4 +1,4 @@
-import { FormattedText } from '@airgram/core/types'
+import { FormattedText } from '@airgram/core'
 
 /** A text message */
 export class InputMessageTextBaseModel {

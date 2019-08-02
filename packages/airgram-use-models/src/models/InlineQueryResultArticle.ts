@@ -1,4 +1,4 @@
-import { PhotoSize } from '@airgram/core/types'
+import { PhotoSize } from '@airgram/core'
 
 /** Represents a link to an article or web page */
 export class InlineQueryResultArticleBaseModel {

@@ -1,4 +1,4 @@
-import { ChatMemberStatusUnion } from '@airgram/core/types'
+import { ChatMemberStatusUnion } from '@airgram/core'
 
 /**
  * A chat member has gained/lost administrator status, or the list of their administrator

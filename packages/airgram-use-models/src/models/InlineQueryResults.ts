@@ -1,4 +1,4 @@
-import { InlineQueryResultUnion } from '@airgram/core/types'
+import { InlineQueryResultUnion } from '@airgram/core'
 
 /**
  * Represents the results of the inline query. Use sendInlineQueryResultMessage to send

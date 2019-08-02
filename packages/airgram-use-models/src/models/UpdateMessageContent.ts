@@ -1,4 +1,4 @@
-import { MessageContentUnion } from '@airgram/core/types'
+import { MessageContentUnion } from '@airgram/core'
 
 /** The message content has changed */
 export class UpdateMessageContentBaseModel {

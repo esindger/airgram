@@ -1,4 +1,10 @@
-import { ChatNotificationSettings, ChatPhoto, ChatTypeUnion, DraftMessage, Message } from '@airgram/core/types'
+import {
+  ChatNotificationSettings,
+  ChatPhoto,
+  ChatTypeUnion,
+  DraftMessage,
+  Message
+} from '@airgram/core'
 
 /** A chat. (Can be a private chat, basic group, supergroup, or secret chat) */
 export class ChatBaseModel {

@@ -1,4 +1,9 @@
-import { Invoice, OrderInfo, PaymentsProviderStripe, SavedCredentials } from '@airgram/core/types'
+import {
+  Invoice,
+  OrderInfo,
+  PaymentsProviderStripe,
+  SavedCredentials
+} from '@airgram/core'
 
 /** Contains information about an invoice payment form */
 export class PaymentFormBaseModel {

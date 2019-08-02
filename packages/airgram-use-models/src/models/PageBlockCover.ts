@@ -1,4 +1,4 @@
-import { PageBlockUnion } from '@airgram/core/types'
+import { PageBlockUnion } from '@airgram/core'
 
 /** A page cover */
 export class PageBlockCoverBaseModel {

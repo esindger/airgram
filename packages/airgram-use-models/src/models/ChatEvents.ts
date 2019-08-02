@@ -1,4 +1,4 @@
-import { ChatEvent } from '@airgram/core/types'
+import { ChatEvent } from '@airgram/core'
 
 /** Contains a list of chat events */
 export class ChatEventsBaseModel {

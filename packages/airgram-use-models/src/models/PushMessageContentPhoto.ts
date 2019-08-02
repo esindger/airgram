@@ -1,4 +1,4 @@
-import { Photo } from '@airgram/core/types'
+import { Photo } from '@airgram/core'
 
 /** A photo message */
 export class PushMessageContentPhotoBaseModel {

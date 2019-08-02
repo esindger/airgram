@@ -1,4 +1,4 @@
-import { FormattedText } from '@airgram/core/types'
+import { FormattedText } from '@airgram/core'
 
 /** Contains information about a tg:// deep link */
 export class DeepLinkInfoBaseModel {

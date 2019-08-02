@@ -1,4 +1,4 @@
-import { Audio } from '@airgram/core/types'
+import { Audio } from '@airgram/core'
 
 /** Represents an audio file */
 export class InlineQueryResultAudioBaseModel {

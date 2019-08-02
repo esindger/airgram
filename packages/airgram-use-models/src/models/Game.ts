@@ -1,4 +1,4 @@
-import { Animation, FormattedText, Photo } from '@airgram/core/types'
+import { Animation, FormattedText, Photo } from '@airgram/core'
 
 /** Describes a game */
 export class GameBaseModel {

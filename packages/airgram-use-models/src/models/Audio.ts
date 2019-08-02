@@ -1,4 +1,4 @@
-import { File, PhotoSize } from '@airgram/core/types'
+import { File, PhotoSize } from '@airgram/core'
 
 /** Describes an audio file. Audio is usually in MP3 format */
 export class AudioBaseModel {

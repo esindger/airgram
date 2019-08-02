@@ -1,4 +1,8 @@
-import { PageBlockHorizontalAlignmentUnion, PageBlockVerticalAlignmentUnion, RichTextUnion } from '@airgram/core/types'
+import {
+  PageBlockHorizontalAlignmentUnion,
+  PageBlockVerticalAlignmentUnion,
+  RichTextUnion
+} from '@airgram/core'
 
 /** Represents a cell of a table */
 export class PageBlockTableCellBaseModel {

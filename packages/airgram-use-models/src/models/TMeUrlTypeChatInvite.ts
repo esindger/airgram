@@ -1,4 +1,4 @@
-import { ChatInviteLinkInfo } from '@airgram/core/types'
+import { ChatInviteLinkInfo } from '@airgram/core'
 
 /** A chat invite link */
 export class TMeUrlTypeChatInviteBaseModel {

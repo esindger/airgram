@@ -1,4 +1,4 @@
-import { PageBlockTableCell, RichTextUnion } from '@airgram/core/types'
+import { PageBlockTableCell, RichTextUnion } from '@airgram/core'
 
 /** A table */
 export class PageBlockTableBaseModel {

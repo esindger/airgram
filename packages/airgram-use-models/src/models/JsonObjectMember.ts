@@ -1,4 +1,4 @@
-import { JsonValueUnion } from '@airgram/core/types'
+import { JsonValueUnion } from '@airgram/core'
 
 /** Represents one member of a JSON object */
 export class JsonObjectMemberBaseModel {

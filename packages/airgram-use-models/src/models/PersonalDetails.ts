@@ -1,4 +1,4 @@
-import { Date } from '@airgram/core/types'
+import { Date } from '@airgram/core'
 
 /** Contains the user's personal details */
 export class PersonalDetailsBaseModel {

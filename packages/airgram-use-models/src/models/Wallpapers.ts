@@ -1,4 +1,4 @@
-import { Wallpaper } from '@airgram/core/types'
+import { Wallpaper } from '@airgram/core'
 
 /** Contains a list of wallpapers */
 export class WallpapersBaseModel {

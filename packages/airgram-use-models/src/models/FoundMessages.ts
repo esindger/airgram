@@ -1,4 +1,4 @@
-import { Message } from '@airgram/core/types'
+import { Message } from '@airgram/core'
 
 /** Contains a list of messages found by a search */
 export class FoundMessagesBaseModel {

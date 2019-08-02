@@ -1,4 +1,4 @@
-import { InputFileUnion, InputThumbnail } from '@airgram/core/types'
+import { InputFileUnion, InputThumbnail } from '@airgram/core'
 
 /** A sticker message */
 export class InputMessageStickerBaseModel {

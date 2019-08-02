@@ -1,4 +1,4 @@
-import { StickerSetInfo } from '@airgram/core/types'
+import { StickerSetInfo } from '@airgram/core'
 
 /** Represents a list of sticker sets */
 export class StickerSetsBaseModel {

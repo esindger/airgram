@@ -2,8 +2,8 @@
   "name": "@airgram-dev/core",
   "version": "2.0.1",
   "homepage": "https://airgram.io",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "main": "dist/package/index.js",
+  "types": "dist/package/index.d.ts",
   "keywords": [
     "telegram",
     "tdlib",
@@ -14,16 +14,15 @@
   ],
   "sideEffects": false,
   "scripts": {
-    "clean": "rm -rf dist",
-    "compile": "npm run clean && tsc",
-    "publish": "np --any-branch --yolo",
-    "dev": "nodemon --config nodemon.json",
-    "lint": "eslint --fix ./src/**/*.ts --fix ./types/**/*.ts",
-    "prepublishOnly": "npm run compile",
+    "build": "gulp build",
+    "check": "tsc --noEmit",
+    "lint": "eslint --fix ./src/**/*.ts",
+    "prepublishOnly": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "pre-commit": "lint",
   "author": "Alexander Krisko",
   "license": "GPL-3.0",
-  "repository": "https://github.com/airgram/airgram"
+  "repository": "https://github.com/airgram/airgram",
+  "gitHead": "4edb9009448894d24d49907b25865350b50c3410"
 }

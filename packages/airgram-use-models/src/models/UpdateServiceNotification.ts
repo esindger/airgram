@@ -1,4 +1,4 @@
-import { MessageContentUnion } from '@airgram/core/types'
+import { MessageContentUnion } from '@airgram/core'
 
 /**
  * Service notification from the server. Upon receiving this the client must show a

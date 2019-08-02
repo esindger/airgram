@@ -1,4 +1,4 @@
-import { ShippingOption } from '@airgram/core/types'
+import { ShippingOption } from '@airgram/core'
 
 /**
  * Contains a temporary identifier of validated order information, which is stored for

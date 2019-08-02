@@ -1,4 +1,4 @@
-import { PageBlockCaption, Photo } from '@airgram/core/types'
+import { PageBlockCaption, Photo } from '@airgram/core'
 
 /** A photo */
 export class PageBlockPhotoBaseModel {

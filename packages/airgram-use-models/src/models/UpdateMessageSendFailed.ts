@@ -1,4 +1,4 @@
-import { Message } from '@airgram/core/types'
+import { Message } from '@airgram/core'
 
 /**
  * A message failed to send. Be aware that some messages being sent can be irrecoverably

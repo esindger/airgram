@@ -1,4 +1,4 @@
-import { FormattedText, WebPage } from '@airgram/core/types'
+import { FormattedText, WebPage } from '@airgram/core'
 
 /** A text message */
 export class MessageTextBaseModel {

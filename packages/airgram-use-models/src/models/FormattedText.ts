@@ -1,4 +1,4 @@
-import { TextEntity } from '@airgram/core/types'
+import { TextEntity } from '@airgram/core'
 
 /** A text with some entities */
 export class FormattedTextBaseModel {

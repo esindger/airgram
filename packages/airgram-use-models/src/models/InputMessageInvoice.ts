@@ -1,4 +1,4 @@
-import { Invoice } from '@airgram/core/types'
+import { Invoice } from '@airgram/core'
 
 /** A message with an invoice; can be used only by bots and only in private chats */
 export class InputMessageInvoiceBaseModel {

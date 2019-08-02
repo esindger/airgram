@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
-import { PlainObjectToModelTransformer } from '@airgram/core/types'
+import { PlainObjectToModelTransformer } from '@airgram/core'
 import camelCase from 'lodash/camelCase'
 import snakeCase from 'lodash/snakeCase'
 

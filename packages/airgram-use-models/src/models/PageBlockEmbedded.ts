@@ -1,4 +1,4 @@
-import { PageBlockCaption, Photo } from '@airgram/core/types'
+import { PageBlockCaption, Photo } from '@airgram/core'
 
 /** An embedded web page */
 export class PageBlockEmbeddedBaseModel {

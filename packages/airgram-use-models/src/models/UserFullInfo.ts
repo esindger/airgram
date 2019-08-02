@@ -1,4 +1,4 @@
-import { BotInfo } from '@airgram/core/types'
+import { BotInfo } from '@airgram/core'
 
 /** Contains full information about a user (except the full list of profile photos) */
 export class UserFullInfoBaseModel {

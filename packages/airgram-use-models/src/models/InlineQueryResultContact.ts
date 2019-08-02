@@ -1,4 +1,4 @@
-import { Contact, PhotoSize } from '@airgram/core/types'
+import { Contact, PhotoSize } from '@airgram/core'
 
 /** Represents a user contact */
 export class InlineQueryResultContactBaseModel {

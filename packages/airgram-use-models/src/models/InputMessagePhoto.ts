@@ -1,4 +1,4 @@
-import { FormattedText, InputFileUnion, InputThumbnail } from '@airgram/core/types'
+import { FormattedText, InputFileUnion, InputThumbnail } from '@airgram/core'
 
 /** A photo message */
 export class InputMessagePhotoBaseModel {

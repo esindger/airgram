@@ -1,5 +1,4 @@
-import { Airgram } from '@airgram/core'
-import { Config } from '@airgram/core/types'
+import { Airgram, Config } from '@airgram/core'
 import { TdJsonProvider, TdJsonProviderConfig } from './components'
 
 export interface AirgramConfig<ContextT>

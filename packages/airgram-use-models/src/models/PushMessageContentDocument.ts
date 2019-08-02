@@ -1,4 +1,4 @@
-import { Document } from '@airgram/core/types'
+import { Document } from '@airgram/core'
 
 /** A document message (a general file) */
 export class PushMessageContentDocumentBaseModel {

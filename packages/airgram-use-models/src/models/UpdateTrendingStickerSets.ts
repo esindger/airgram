@@ -1,4 +1,4 @@
-import { StickerSets } from '@airgram/core/types'
+import { StickerSets } from '@airgram/core'
 
 /** The list of trending sticker sets was updated or some of them were viewed */
 export class UpdateTrendingStickerSetsBaseModel {

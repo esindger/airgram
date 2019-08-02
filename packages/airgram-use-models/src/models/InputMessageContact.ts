@@ -1,4 +1,4 @@
-import { Contact } from '@airgram/core/types'
+import { Contact } from '@airgram/core'
 
 /** A message containing a user contact */
 export class InputMessageContactBaseModel {

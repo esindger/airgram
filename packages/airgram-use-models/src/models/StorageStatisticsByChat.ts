@@ -1,4 +1,4 @@
-import { StorageStatisticsByFileType } from '@airgram/core/types'
+import { StorageStatisticsByFileType } from '@airgram/core'
 
 /** Contains the storage usage statistics for a specific chat */
 export class StorageStatisticsByChatBaseModel {

@@ -1,4 +1,4 @@
-import { PhotoSize } from '@airgram/core/types'
+import { PhotoSize } from '@airgram/core'
 
 /** Contains information about a wallpaper */
 export class WallpaperBaseModel {

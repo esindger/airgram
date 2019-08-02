@@ -1,4 +1,4 @@
-import { EmailAddressAuthenticationCodeInfo } from '@airgram/core/types'
+import { EmailAddressAuthenticationCodeInfo } from '@airgram/core'
 
 /** Represents the current state of 2-step verification */
 export class PasswordStateBaseModel {

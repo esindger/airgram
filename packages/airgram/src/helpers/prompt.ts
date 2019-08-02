@@ -3,8 +3,8 @@
 import * as readline from 'readline'
 
 export interface PromptDeferred {
-  resolve: (value: string) => void;
-  reject: (error: Error) => void;
+  resolve: (value: string) => void
+  reject: (error: Error) => void
 }
 
 let prev: PromptDeferred | null = null

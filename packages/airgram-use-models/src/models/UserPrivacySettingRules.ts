@@ -1,4 +1,4 @@
-import { UserPrivacySettingRuleUnion } from '@airgram/core/types'
+import { UserPrivacySettingRuleUnion } from '@airgram/core'
 
 /**
  * A list of privacy rules. Rules are matched in the specified order. The first matched

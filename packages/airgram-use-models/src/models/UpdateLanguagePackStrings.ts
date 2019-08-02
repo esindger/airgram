@@ -1,4 +1,4 @@
-import { LanguagePackString } from '@airgram/core/types'
+import { LanguagePackString } from '@airgram/core'
 
 /** Some language pack strings have been updated */
 export class UpdateLanguagePackStringsBaseModel {

@@ -1,4 +1,4 @@
-import { ChatPhoto } from '@airgram/core/types'
+import { ChatPhoto } from '@airgram/core'
 
 /** The chat photo was changed */
 export class ChatEventPhotoChangedBaseModel {

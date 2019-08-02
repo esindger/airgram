@@ -1,4 +1,4 @@
-import { Video } from '@airgram/core/types'
+import { Video } from '@airgram/core'
 
 /** A video message */
 export class PushMessageContentVideoBaseModel {

@@ -1,4 +1,4 @@
-import { Message } from '@airgram/core/types'
+import { Message } from '@airgram/core'
 
 /** A message was edited */
 export class ChatEventMessageEditedBaseModel {

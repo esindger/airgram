@@ -1,4 +1,4 @@
-import { Poll } from '@airgram/core/types'
+import { Poll } from '@airgram/core'
 
 /** A message with a poll */
 export class MessagePollBaseModel {

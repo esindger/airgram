@@ -1,4 +1,4 @@
-import { Notification } from '@airgram/core/types'
+import { Notification } from '@airgram/core'
 
 /** A notification was changed */
 export class UpdateNotificationBaseModel {

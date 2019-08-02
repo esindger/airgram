@@ -1,4 +1,4 @@
-import { RichTextUnion } from '@airgram/core/types'
+import { RichTextUnion } from '@airgram/core'
 
 /**
  * Contains a caption of an instant view web page block, consisting of a text and a

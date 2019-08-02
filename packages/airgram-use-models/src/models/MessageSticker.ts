@@ -1,4 +1,4 @@
-import { Sticker } from '@airgram/core/types'
+import { Sticker } from '@airgram/core'
 
 /** A sticker message */
 export class MessageStickerBaseModel {

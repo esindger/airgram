@@ -1,4 +1,4 @@
-import { CallbackQueryPayloadUnion } from '@airgram/core/types'
+import { CallbackQueryPayloadUnion } from '@airgram/core'
 
 /** A new incoming callback query from a message sent via a bot; for bots only */
 export class UpdateNewInlineCallbackQueryBaseModel {

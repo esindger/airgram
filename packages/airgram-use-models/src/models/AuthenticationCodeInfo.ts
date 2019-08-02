@@ -1,4 +1,4 @@
-import { AuthenticationCodeTypeUnion } from '@airgram/core/types'
+import { AuthenticationCodeTypeUnion } from '@airgram/core'
 
 /** Information about the authentication code that was sent */
 export class AuthenticationCodeInfoBaseModel {

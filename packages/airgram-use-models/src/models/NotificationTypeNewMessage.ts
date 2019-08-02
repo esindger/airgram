@@ -1,4 +1,4 @@
-import { Message } from '@airgram/core/types'
+import { Message } from '@airgram/core'
 
 /** New message was received */
 export class NotificationTypeNewMessageBaseModel {

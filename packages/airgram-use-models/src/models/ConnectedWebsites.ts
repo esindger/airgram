@@ -1,4 +1,4 @@
-import { ConnectedWebsite } from '@airgram/core/types'
+import { ConnectedWebsite } from '@airgram/core'
 
 /** Contains a list of websites the current user is logged in with Telegram */
 export class ConnectedWebsitesBaseModel {

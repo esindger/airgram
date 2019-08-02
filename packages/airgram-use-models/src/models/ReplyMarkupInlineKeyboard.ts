@@ -1,4 +1,4 @@
-import { InlineKeyboardButton } from '@airgram/core/types'
+import { InlineKeyboardButton } from '@airgram/core'
 
 /** Contains an inline keyboard layout */
 export class ReplyMarkupInlineKeyboardBaseModel {

@@ -1,3 +1,4 @@
+import { Composer, createContext, Serializable } from './components'
 import {
   ApiMethods,
   ApiRequest,
@@ -14,12 +15,11 @@ import {
   Middleware,
   MiddlewareFn,
   MiddlewareOn,
-  RequestContext,
+  RequestContext, TdLibConfig,
   TdProvider,
   UpdateAuthorizationState,
   UpdateContext
-} from '../types'
-import { Composer, createContext, Serializable } from './components'
+} from './types'
 import { createDeferred, pick } from './utils'
 
 const getDefaultConfig = <T> (): Partial<Config<T>> => ({
@@ -32,7 +32,7 @@ const getDefaultConfig = <T> (): Partial<Config<T>> => ({
   systemVersion: 'UNKNOWN VERSION'
 })
 
-const tdlibOptions: (keyof Airgram.TdLibConfig)[] = [
+const tdlibOptions: (keyof TdLibConfig)[] = [
   'useTestDc',
   'databaseDirectory',
   'filesDirectory',
@@ -66,7 +66,7 @@ export class Airgram<ContextT, ProviderT extends TdProvider> implements Instance
     this.composer.on(predicateTypes, ...fns)
   }
 
-  private _createContext?: (options: ContextOptions) => ContextT
+  private _createContext?: (options: ContextOptions) => BaseContext & ContextT
 
   private readonly composer: Composer<(RequestContext<unknown, any> | UpdateContext<any>) & ContextT>
 
@@ -209,13 +209,14 @@ export class Airgram<ContextT, ProviderT extends TdProvider> implements Instance
     }).catch((error) => this.handleError(error, ctx))
   }
 
-  private createContext<T extends BaseContext> (
+  private createContext<T extends BaseContext & ContextT> (
     _: string, state: Record<string, unknown>, options: Record<string, unknown>): T {
     if (this.config.contextFactory && !this._createContext) {
-      this._createContext = this.config.contextFactory(this)
+      // FIXME: create user context and mix it to base context
+      this._createContext = this.config.contextFactory(this) as any
     }
     const contextFn = this._createContext || createContext
-    return contextFn<T>(
+    return contextFn(
       Object.assign({}, options, {
         _,
         airgram: this,

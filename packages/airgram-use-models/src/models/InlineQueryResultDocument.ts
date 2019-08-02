@@ -1,4 +1,4 @@
-import { Document } from '@airgram/core/types'
+import { Document } from '@airgram/core'
 
 /** Represents a document */
 export class InlineQueryResultDocumentBaseModel {

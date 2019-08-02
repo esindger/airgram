@@ -1,4 +1,4 @@
-import { BasicGroupFullInfo } from '@airgram/core/types'
+import { BasicGroupFullInfo } from '@airgram/core'
 
 /** Some data from basicGroupFullInfo has been changed */
 export class UpdateBasicGroupFullInfoBaseModel {

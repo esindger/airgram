@@ -1,4 +1,4 @@
-import { Audio, PageBlockCaption } from '@airgram/core/types'
+import { Audio, PageBlockCaption } from '@airgram/core'
 
 /** An audio file */
 export class PageBlockAudioBaseModel {

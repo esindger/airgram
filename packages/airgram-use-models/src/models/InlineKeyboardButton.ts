@@ -1,4 +1,4 @@
-import { InlineKeyboardButtonTypeUnion } from '@airgram/core/types'
+import { InlineKeyboardButtonTypeUnion } from '@airgram/core'
 
 /** Represents a single button in an inline keyboard */
 export class InlineKeyboardButtonBaseModel {

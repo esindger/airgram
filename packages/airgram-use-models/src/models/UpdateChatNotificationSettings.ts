@@ -1,4 +1,4 @@
-import { ChatNotificationSettings } from '@airgram/core/types'
+import { ChatNotificationSettings } from '@airgram/core'
 
 /** Notification settings for a chat were changed */
 export class UpdateChatNotificationSettingsBaseModel {

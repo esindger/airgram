@@ -1,4 +1,4 @@
-import { Animation } from '@airgram/core/types'
+import { Animation } from '@airgram/core'
 
 /** Represents an animation file */
 export class InlineQueryResultAnimationBaseModel {

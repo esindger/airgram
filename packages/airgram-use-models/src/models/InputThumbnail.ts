@@ -1,4 +1,4 @@
-import { InputFileUnion } from '@airgram/core/types'
+import { InputFileUnion } from '@airgram/core'
 
 /**
  * A thumbnail to be sent along with a file; should be in JPEG or WEBP format for stickers,

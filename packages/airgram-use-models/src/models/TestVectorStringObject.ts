@@ -1,4 +1,4 @@
-import { TestString } from '@airgram/core/types'
+import { TestString } from '@airgram/core'
 
 /** A simple object containing a vector of objects that hold a string; for testing only */
 export class TestVectorStringObjectBaseModel {

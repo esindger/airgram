@@ -1,4 +1,4 @@
-import { ChatMemberStatusUnion } from '@airgram/core/types'
+import { ChatMemberStatusUnion } from '@airgram/core'
 
 /** A new chat member was invited */
 export class ChatEventMemberInvitedBaseModel {

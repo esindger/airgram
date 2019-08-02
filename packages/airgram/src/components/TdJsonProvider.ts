@@ -1,5 +1,4 @@
-import { TdProvider } from '@airgram/core'
-import { ApiRequest, Data, PlainObjectToModelTransformer } from '@airgram/core/types'
+import { ApiRequest, Data, PlainObjectToModelTransformer, TdProvider } from '@airgram/core'
 import { TdJsonClient, TdJsonClientConfig } from './TdJsonClient'
 
 export type TdJsonProviderConfig = Omit<TdJsonClientConfig, 'handleUpdate' | 'handleError' | 'models'>

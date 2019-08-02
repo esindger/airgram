@@ -1,4 +1,4 @@
-import { Photo } from '@airgram/core/types'
+import { Photo } from '@airgram/core'
 
 /** A message with an invoice from a bot */
 export class MessageInvoiceBaseModel {

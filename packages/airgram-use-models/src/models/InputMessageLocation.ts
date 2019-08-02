@@ -1,4 +1,4 @@
-import { Location } from '@airgram/core/types'
+import { Location } from '@airgram/core'
 
 /** A message with a location */
 export class InputMessageLocationBaseModel {

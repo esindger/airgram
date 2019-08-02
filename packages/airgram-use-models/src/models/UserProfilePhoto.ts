@@ -1,4 +1,4 @@
-import { PhotoSize } from '@airgram/core/types'
+import { PhotoSize } from '@airgram/core'
 
 /** Contains full information about a user profile photo */
 export class UserProfilePhotoBaseModel {

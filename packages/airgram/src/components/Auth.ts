@@ -1,5 +1,4 @@
 import { AUTHORIZATION_STATE } from '@airgram/constants'
-import { Composer } from '@airgram/core'
 import {
   ApiResponse,
   AuthorizationStateUnion,
@@ -7,30 +6,31 @@ import {
   BaseData,
   CheckAuthenticationCodeParams,
   CheckAuthenticationPasswordParams,
+  Composer,
   ErrorUnion,
   Instance,
   MiddlewareFn,
   Ok,
   OkUnion,
   UpdateAuthorizationState
-} from '@airgram/core/types'
+} from '@airgram/core'
 import { TdJsonProvider } from './TdJsonProvider'
 
 interface LoginDeferred {
-  promise: Promise<void>;
-  resolve: () => unknown;
-  reject: (error: Error) => unknown;
+  promise: Promise<void>
+  resolve: () => unknown
+  reject: (error: Error) => unknown
 }
 
 type AuthAnswer = string | (() => string) | (() => Promise<string>)
 
 interface AuthDialog {
-  code?: AuthAnswer;
-  firstName?: AuthAnswer;
-  lastName?: AuthAnswer;
-  phoneNumber?: AuthAnswer;
-  password?: AuthAnswer;
-  token?: AuthAnswer;
+  code?: AuthAnswer
+  firstName?: AuthAnswer
+  lastName?: AuthAnswer
+  phoneNumber?: AuthAnswer
+  password?: AuthAnswer
+  token?: AuthAnswer
 }
 
 const AUTH_METHODS = [

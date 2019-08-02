@@ -1,4 +1,4 @@
-import { RichTextUnion } from '@airgram/core/types'
+import { RichTextUnion } from '@airgram/core'
 
 /** The author and publishing date of a page */
 export class PageBlockAuthorDateBaseModel {

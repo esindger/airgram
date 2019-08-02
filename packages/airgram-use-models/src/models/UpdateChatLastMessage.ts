@@ -1,4 +1,4 @@
-import { Message } from '@airgram/core/types'
+import { Message } from '@airgram/core'
 
 /**
  * The last message of a chat was changed. If last_message is null then the last message

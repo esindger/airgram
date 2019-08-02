@@ -1,4 +1,4 @@
-import { OrderInfo } from '@airgram/core/types'
+import { OrderInfo } from '@airgram/core'
 
 /** A payment has been completed; for bots only */
 export class MessagePaymentSuccessfulBotBaseModel {

@@ -1,4 +1,4 @@
-import { NetworkStatisticsEntryUnion } from '@airgram/core/types'
+import { NetworkStatisticsEntryUnion } from '@airgram/core'
 
 /** A full list of available network statistic entries */
 export class NetworkStatisticsBaseModel {

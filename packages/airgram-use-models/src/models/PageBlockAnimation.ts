@@ -1,4 +1,4 @@
-import { Animation, PageBlockCaption } from '@airgram/core/types'
+import { Animation, PageBlockCaption } from '@airgram/core'
 
 /** An animation */
 export class PageBlockAnimationBaseModel {

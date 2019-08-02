@@ -1,4 +1,4 @@
-import { Photo } from '@airgram/core/types'
+import { Photo } from '@airgram/core'
 
 /** An updated chat photo */
 export class MessageChatChangePhotoBaseModel {

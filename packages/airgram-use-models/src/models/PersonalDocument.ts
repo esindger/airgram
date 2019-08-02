@@ -1,4 +1,4 @@
-import { DatedFile } from '@airgram/core/types'
+import { DatedFile } from '@airgram/core'
 
 /** A personal document, containing some information about a user */
 export class PersonalDocumentBaseModel {

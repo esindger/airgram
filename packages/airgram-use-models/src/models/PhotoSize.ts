@@ -1,4 +1,4 @@
-import { File } from '@airgram/core/types'
+import { File } from '@airgram/core'
 
 /** Photo description */
 export class PhotoSizeBaseModel {

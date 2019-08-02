@@ -1,4 +1,4 @@
-import { UserProfilePhoto } from '@airgram/core/types'
+import { UserProfilePhoto } from '@airgram/core'
 
 /** Contains part of the list of user photos */
 export class UserProfilePhotosBaseModel {

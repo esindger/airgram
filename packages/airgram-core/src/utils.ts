@@ -1,4 +1,4 @@
-import { Deferred } from '../types'
+import { Deferred } from './types'
 
 export function pick<T, K extends keyof T> (obj: T, paths: K[]): Pick<T, K> {
   // eslint-disable-next-line @typescript-eslint/no-object-literal-type-assertion

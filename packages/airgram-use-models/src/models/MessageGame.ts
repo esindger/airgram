@@ -1,4 +1,4 @@
-import { Game } from '@airgram/core/types'
+import { Game } from '@airgram/core'
 
 /** A message with a game */
 export class MessageGameBaseModel {

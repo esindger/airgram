@@ -1,4 +1,4 @@
-import { PageBlockUnion } from '@airgram/core/types'
+import { PageBlockUnion } from '@airgram/core'
 
 /** Describes an instant view page for a web page */
 export class WebPageInstantViewBaseModel {

@@ -1,4 +1,4 @@
-import { DraftMessage } from '@airgram/core/types'
+import { DraftMessage } from '@airgram/core'
 
 /**
  * A chat draft has changed. Be aware that the update may come in the currently opened

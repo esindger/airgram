@@ -20,11 +20,16 @@ module.exports = {
   rules: {
     // allow debugger during development
     'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0,
-    '@typescript-eslint/no-explicit-any': [1, {
+    '@typescript-eslint/no-explicit-any': [0, {
       fixToUnknown: false,
       ignoreRestArgs: true
     }],
     '@typescript-eslint/indent': 0,
+    '@typescript-eslint/member-delimiter-style': [2, {
+      multiline: {
+        'delimiter': 'none'
+      }
+    }],
     '@typescript-eslint/explicit-function-return-type': [1, {
       allowExpressions: true,
       allowTypedFunctionExpressions: true,

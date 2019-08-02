@@ -1,4 +1,4 @@
-import { FormattedText, InputFileUnion } from '@airgram/core/types'
+import { FormattedText, InputFileUnion } from '@airgram/core'
 
 /** A voice note message */
 export class InputMessageVoiceNoteBaseModel {

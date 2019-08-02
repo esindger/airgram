@@ -1,4 +1,4 @@
-import { PageBlockRelatedArticle, RichTextUnion } from '@airgram/core/types'
+import { PageBlockRelatedArticle, RichTextUnion } from '@airgram/core'
 
 /** Related articles */
 export class PageBlockRelatedArticlesBaseModel {

@@ -1,4 +1,4 @@
-import { PassportSuitableElement } from '@airgram/core/types'
+import { PassportSuitableElement } from '@airgram/core'
 
 /**
  * Contains a description of the required Telegram Passport element that was requested

@@ -1,4 +1,4 @@
-import { ApiRequest, Data, PlainObjectToModelTransformer, TdProvider as BaseTdProvider } from '../../types'
+import { ApiRequest, Data, PlainObjectToModelTransformer, TdProvider as BaseTdProvider } from '../types'
 
 export abstract class TdProvider<ClientT = unknown> implements BaseTdProvider {
   protected client?: ClientT

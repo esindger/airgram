@@ -1,4 +1,4 @@
-import { Sticker } from '@airgram/core/types'
+import { Sticker } from '@airgram/core'
 
 /** Represents a sticker */
 export class InlineQueryResultStickerBaseModel {

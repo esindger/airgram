@@ -1,4 +1,4 @@
-import { PageBlockUnion } from '@airgram/core/types'
+import { PageBlockUnion } from '@airgram/core'
 
 /** Describes an item of a list page block */
 export class PageBlockListItemBaseModel {

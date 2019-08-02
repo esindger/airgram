@@ -1,4 +1,4 @@
-import { ChatMemberStatusUnion } from '@airgram/core/types'
+import { ChatMemberStatusUnion } from '@airgram/core'
 
 /**
  * Represents a supergroup or channel with zero or more members (subscribers in the

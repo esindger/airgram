@@ -1,4 +1,4 @@
-import { DatedFile, PassportElementTypeUnion } from '@airgram/core/types'
+import { DatedFile, PassportElementTypeUnion } from '@airgram/core'
 
 /** Contains information about an encrypted Telegram Passport element; for bots only */
 export class EncryptedPassportElementBaseModel {

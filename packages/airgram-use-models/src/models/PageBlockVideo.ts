@@ -1,4 +1,4 @@
-import { PageBlockCaption, Video } from '@airgram/core/types'
+import { PageBlockCaption, Video } from '@airgram/core'
 
 /** A video */
 export class PageBlockVideoBaseModel {

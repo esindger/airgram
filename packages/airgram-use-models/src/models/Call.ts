@@ -1,4 +1,4 @@
-import { CallStateUnion } from '@airgram/core/types'
+import { CallStateUnion } from '@airgram/core'
 
 /** Describes a call */
 export class CallBaseModel {

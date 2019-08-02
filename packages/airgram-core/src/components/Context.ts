@@ -1,4 +1,4 @@
-import { BaseContext, ContextOptions, ContextState, GetStateFn, SetStateFn } from '../../types'
+import { BaseContext, ContextOptions, ContextState, GetStateFn, SetStateFn } from '../types'
 
 export function createState (starting: Record<string, unknown>): ContextState {
   let state = { ...starting }

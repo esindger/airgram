@@ -1,4 +1,4 @@
-import { Document } from '@airgram/core/types'
+import { Document } from '@airgram/core'
 
 /** A small image inside the text */
 export class RichTextIconBaseModel {

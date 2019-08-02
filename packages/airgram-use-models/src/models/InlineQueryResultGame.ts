@@ -1,4 +1,4 @@
-import { Game } from '@airgram/core/types'
+import { Game } from '@airgram/core'
 
 /** Represents information about a game */
 export class InlineQueryResultGameBaseModel {

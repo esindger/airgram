@@ -1,4 +1,4 @@
-import { TermsOfService } from '@airgram/core/types'
+import { TermsOfService } from '@airgram/core'
 
 /**
  * New terms of service must be accepted by the user. If the terms of service are declined,

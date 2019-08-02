@@ -1,4 +1,4 @@
-import { File } from '@airgram/core/types'
+import { File } from '@airgram/core'
 
 /**
  * Describes a voice note. The voice note must be encoded with the Opus codec, and stored

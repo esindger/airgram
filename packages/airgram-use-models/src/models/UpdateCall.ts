@@ -1,4 +1,4 @@
-import { Call } from '@airgram/core/types'
+import { Call } from '@airgram/core'
 
 /** New call was created or information about a call was updated */
 export class UpdateCallBaseModel {

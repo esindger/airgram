@@ -1,4 +1,4 @@
-import { Invoice, OrderInfo, ShippingOption } from '@airgram/core/types'
+import { Invoice, OrderInfo, ShippingOption } from '@airgram/core'
 
 /** Contains information about a successful payment */
 export class PaymentReceiptBaseModel {

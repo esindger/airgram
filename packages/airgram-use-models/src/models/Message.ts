@@ -3,7 +3,7 @@ import {
   MessageForwardInfo,
   MessageSendingStateUnion,
   ReplyMarkupUnion
-} from '@airgram/core/types'
+} from '@airgram/core'
 
 /** Describes a message */
 export class MessageBaseModel {

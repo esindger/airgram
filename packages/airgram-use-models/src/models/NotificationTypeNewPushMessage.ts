@@ -1,4 +1,4 @@
-import { PushMessageContentUnion } from '@airgram/core/types'
+import { PushMessageContentUnion } from '@airgram/core'
 
 /** New message was received through a push notification */
 export class NotificationTypeNewPushMessageBaseModel {

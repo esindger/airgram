@@ -1,4 +1,4 @@
-import { ReplyMarkupUnion } from '@airgram/core/types'
+import { ReplyMarkupUnion } from '@airgram/core'
 
 /** A message was edited. Changes in the message content will come in a separate updateMessageContent */
 export class UpdateMessageEditedBaseModel {

@@ -6,7 +6,8 @@
   "repository": "https://github.com/airgram/airgram",
   "scripts": {
     "install": "lerna exec npm install",
-    "commit": "commit"
+    "commit": "commit",
+    "lint": "eslint --fix packages/*/src/**/*.ts"
   },
   "devDependencies": {
     "@types/gulp-replace": "0.0.31",

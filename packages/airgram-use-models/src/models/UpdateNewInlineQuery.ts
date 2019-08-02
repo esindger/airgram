@@ -1,4 +1,4 @@
-import { Location } from '@airgram/core/types'
+import { Location } from '@airgram/core'
 
 /** A new incoming inline query; for bots only */
 export class UpdateNewInlineQueryBaseModel {

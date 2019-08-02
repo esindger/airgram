@@ -1,4 +1,4 @@
-import { EncryptedCredentials, EncryptedPassportElement } from '@airgram/core/types'
+import { EncryptedCredentials, EncryptedPassportElement } from '@airgram/core'
 
 /** Telegram Passport data has been received; for bots only */
 export class MessagePassportDataReceivedBaseModel {

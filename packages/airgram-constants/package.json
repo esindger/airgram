@@ -2,8 +2,8 @@
   "name": "@airgram-dev/constants",
   "version": "2.0.1",
   "homepage": "https://airgram.io",
-  "main": "index.js",
-  "types": "index.d.ts",
+  "main": "dist/package/index.js",
+  "types": "dist/package/index.d.ts",
   "keywords": [
     "telegram",
     "tdlib typings",
@@ -13,13 +13,12 @@
   ],
   "scripts": {
     "build": "gulp build",
-    "publish": "npm run build && np --yolo --contents=dist/package",
     "check": "tsc --noEmit",
-    "link": "npm run build && cd ./dist/package && npm link",
-    "lint": "tslint --project tsconfig.json",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "npm run build",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Alexander Krisko",
   "license": "GPL-3.0",
-  "repository": "https://github.com/airgram"
+  "repository": "https://github.com/airgram",
+  "gitHead": "4edb9009448894d24d49907b25865350b50c3410"
 }

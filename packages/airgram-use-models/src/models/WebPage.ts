@@ -1,4 +1,13 @@
-import { Animation, Audio, Document, Photo, Sticker, Video, VideoNote, VoiceNote } from '@airgram/core/types'
+import {
+  Animation,
+  Audio,
+  Document,
+  Photo,
+  Sticker,
+  Video,
+  VideoNote,
+  VoiceNote
+} from '@airgram/core'
 
 /** Describes a web page preview */
 export class WebPageBaseModel {

@@ -1,4 +1,4 @@
-import { TextEntityTypeUnion } from '@airgram/core/types'
+import { TextEntityTypeUnion } from '@airgram/core'
 
 /** Represents a part of the text that needs to be formatted in some unusual way */
 export class TextEntityBaseModel {

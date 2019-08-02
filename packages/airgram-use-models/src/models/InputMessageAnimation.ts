@@ -1,4 +1,4 @@
-import { FormattedText, InputFileUnion, InputThumbnail } from '@airgram/core/types'
+import { FormattedText, InputFileUnion, InputThumbnail } from '@airgram/core'
 
 /** An animation message (GIF-style). */
 export class InputMessageAnimationBaseModel {

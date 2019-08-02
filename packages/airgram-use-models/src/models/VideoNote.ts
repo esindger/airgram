@@ -1,4 +1,4 @@
-import { File, PhotoSize } from '@airgram/core/types'
+import { File, PhotoSize } from '@airgram/core'
 
 /**
  * Describes a video note. The video must be equal in width and height, cropped to a

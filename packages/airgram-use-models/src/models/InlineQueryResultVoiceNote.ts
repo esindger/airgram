@@ -1,4 +1,4 @@
-import { VoiceNote } from '@airgram/core/types'
+import { VoiceNote } from '@airgram/core'
 
 /** Represents a voice note */
 export class InlineQueryResultVoiceNoteBaseModel {

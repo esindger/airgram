@@ -1,4 +1,4 @@
-import { SecretChatStateUnion } from '@airgram/core/types'
+import { SecretChatStateUnion } from '@airgram/core'
 
 /** Represents a secret chat */
 export class SecretChatBaseModel {

@@ -1,4 +1,4 @@
-import { ChatMemberStatusUnion } from '@airgram/core/types'
+import { ChatMemberStatusUnion } from '@airgram/core'
 
 /**
  * Represents a basic group of 0-200 users (must be upgraded to a supergroup to accommodate

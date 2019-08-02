@@ -1,4 +1,4 @@
-import { PollOption } from '@airgram/core/types'
+import { PollOption } from '@airgram/core'
 
 /** Describes a poll */
 export class PollBaseModel {

@@ -1,4 +1,4 @@
-import { VoiceNote } from '@airgram/core/types'
+import { VoiceNote } from '@airgram/core'
 
 /** A voice note message */
 export class PushMessageContentVoiceNoteBaseModel {

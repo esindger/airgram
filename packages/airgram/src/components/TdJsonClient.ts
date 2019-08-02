@@ -1,23 +1,23 @@
-import { ApiRequest, Data, PlainObjectToModelTransformer } from '@airgram/core/types'
+import { ApiRequest, Data, PlainObjectToModelTransformer } from '@airgram/core'
 import { createDeserializer, createSerializer } from '../helpers'
 import { TdJsonProxy } from './TdJsonProxy'
 
 type NativeData = (Data & { '@extra'?: string }) | null
 
 export interface ApiDeferred {
-  _: string;
-  resolve: (result: Data) => unknown;
-  reject: (error: Error) => unknown;
+  _: string
+  resolve: (result: Data) => unknown
+  reject: (error: Error) => unknown
 }
 
 export interface TdJsonClientConfig {
-  command?: string;
-  logFilePath?: string | null;
-  logMaxFileSize?: number | string;
-  logVerbosityLevel?: number;
-  handleUpdate: (update: Data) => Promise<unknown>;
-  handleError: (error: Error | string) => void;
-  models?: PlainObjectToModelTransformer;
+  command?: string
+  logFilePath?: string | null
+  logMaxFileSize?: number | string
+  logVerbosityLevel?: number
+  handleUpdate: (update: Data) => Promise<unknown>
+  handleError: (error: Error | string) => void
+  models?: PlainObjectToModelTransformer
 }
 
 export class TdJsonClient {

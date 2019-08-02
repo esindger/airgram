@@ -1,4 +1,4 @@
-import { Sticker, StickerEmojis } from '@airgram/core/types'
+import { Sticker, StickerEmojis } from '@airgram/core'
 
 /** Represents a sticker set */
 export class StickerSetBaseModel {

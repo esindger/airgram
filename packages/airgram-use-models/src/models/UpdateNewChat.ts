@@ -1,4 +1,4 @@
-import { Chat } from '@airgram/core/types'
+import { Chat } from '@airgram/core'
 
 /**
  * A new chat has been loaded/created. This update is guaranteed to come before the

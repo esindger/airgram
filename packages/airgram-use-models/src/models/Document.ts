@@ -1,4 +1,4 @@
-import { File, PhotoSize } from '@airgram/core/types'
+import { File, PhotoSize } from '@airgram/core'
 
 /** Describes a document of any type */
 export class DocumentBaseModel {

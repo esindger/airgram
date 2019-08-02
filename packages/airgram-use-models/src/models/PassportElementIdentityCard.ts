@@ -1,4 +1,4 @@
-import { IdentityDocument } from '@airgram/core/types'
+import { IdentityDocument } from '@airgram/core'
 
 /** A Telegram Passport element containing the user's identity card */
 export class PassportElementIdentityCardBaseModel {

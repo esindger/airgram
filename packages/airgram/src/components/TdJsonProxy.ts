@@ -5,18 +5,18 @@ import { resolve as resolvePath } from 'path'
 import * as ref from 'ref-napi'
 
 interface TdJsonClient {
-  td_json_client_create: any;
-  td_json_client_send: any;
-  td_json_client_receive: any;
-  td_json_client_execute: any;
-  td_json_client_destroy: any;
+  td_json_client_create: any
+  td_json_client_send: any
+  td_json_client_receive: any
+  td_json_client_execute: any
+  td_json_client_destroy: any
 }
 
 interface TdLog {
-  td_set_log_file_path: any;
-  td_set_log_max_file_size: any;
-  td_set_log_verbosity_level: any;
-  td_set_log_fatal_error_callback: any;
+  td_set_log_file_path: any
+  td_set_log_max_file_size: any
+  td_set_log_verbosity_level: any
+  td_set_log_fatal_error_callback: any
 }
 
 const PATH_TO_LIBRARY_FILE = process.platform === 'win32' ? 'tdjson' : 'libtdjson'

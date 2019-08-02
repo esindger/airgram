@@ -1,4 +1,4 @@
-import { OrderInfo } from '@airgram/core/types'
+import { OrderInfo } from '@airgram/core'
 
 /**
  * A new incoming pre-checkout query; for bots only. Contains full information about

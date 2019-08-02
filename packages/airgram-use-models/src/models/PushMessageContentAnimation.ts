@@ -1,4 +1,4 @@
-import { Animation } from '@airgram/core/types'
+import { Animation } from '@airgram/core'
 
 /** An animation message (GIF-style) */
 export class PushMessageContentAnimationBaseModel {

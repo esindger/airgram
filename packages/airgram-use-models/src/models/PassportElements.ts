@@ -1,4 +1,4 @@
-import { PassportElementUnion } from '@airgram/core/types'
+import { PassportElementUnion } from '@airgram/core'
 
 /** Contains information about saved Telegram Passport elements */
 export class PassportElementsBaseModel {

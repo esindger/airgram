@@ -1,4 +1,4 @@
-import { TestInt } from '@airgram/core/types'
+import { TestInt } from '@airgram/core'
 
 /** A simple object containing a vector of objects that hold a number; for testing only */
 export class TestVectorIntObjectBaseModel {

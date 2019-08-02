@@ -1,4 +1,4 @@
-import { PageBlockCaption, PageBlockUnion } from '@airgram/core/types'
+import { PageBlockCaption, PageBlockUnion } from '@airgram/core'
 
 /** A slideshow */
 export class PageBlockSlideshowBaseModel {

@@ -1,4 +1,4 @@
-import { FormattedText, Video } from '@airgram/core/types'
+import { FormattedText, Video } from '@airgram/core'
 
 /** A video message */
 export class MessageVideoBaseModel {

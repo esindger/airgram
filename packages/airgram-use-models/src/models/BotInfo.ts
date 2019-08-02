@@ -1,4 +1,4 @@
-import { BotCommand } from '@airgram/core/types'
+import { BotCommand } from '@airgram/core'
 
 /** Provides information about a bot and its supported commands */
 export class BotInfoBaseModel {

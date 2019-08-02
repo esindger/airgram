@@ -1,4 +1,4 @@
-import { ConnectionStateUnion } from '@airgram/core/types'
+import { ConnectionStateUnion } from '@airgram/core'
 
 /** The connection state has changed */
 export class UpdateConnectionStateBaseModel {

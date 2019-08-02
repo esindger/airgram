@@ -1,4 +1,4 @@
-import { MaskPointUnion } from '@airgram/core/types'
+import { MaskPointUnion } from '@airgram/core'
 
 /** Position on a photo where a mask should be placed */
 export class MaskPositionBaseModel {

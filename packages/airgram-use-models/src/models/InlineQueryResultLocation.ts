@@ -1,4 +1,4 @@
-import { Location, PhotoSize } from '@airgram/core/types'
+import { Location, PhotoSize } from '@airgram/core'
 
 /** Represents a point on the map */
 export class InlineQueryResultLocationBaseModel {

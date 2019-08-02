@@ -1,4 +1,4 @@
-import { File, PhotoSize } from '@airgram/core/types'
+import { File, PhotoSize } from '@airgram/core'
 
 /** Describes a video file */
 export class VideoBaseModel {

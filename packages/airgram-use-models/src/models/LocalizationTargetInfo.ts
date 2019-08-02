@@ -1,4 +1,4 @@
-import { LanguagePackInfo } from '@airgram/core/types'
+import { LanguagePackInfo } from '@airgram/core'
 
 /** Contains information about the current localization target */
 export class LocalizationTargetInfoBaseModel {

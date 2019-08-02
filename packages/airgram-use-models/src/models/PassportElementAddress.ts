@@ -1,4 +1,4 @@
-import { Address } from '@airgram/core/types'
+import { Address } from '@airgram/core'
 
 /** A Telegram Passport element containing the user's address */
 export class PassportElementAddressBaseModel {

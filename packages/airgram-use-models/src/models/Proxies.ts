@@ -1,4 +1,4 @@
-import { Proxy } from '@airgram/core/types'
+import { Proxy } from '@airgram/core'
 
 /** Represents a list of proxy servers */
 export class ProxiesBaseModel {

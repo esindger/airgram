@@ -1,4 +1,4 @@
-import { Location } from '@airgram/core/types'
+import { Location } from '@airgram/core'
 
 /** The user has chosen a result of an inline query; for bots only */
 export class UpdateNewChosenInlineResultBaseModel {

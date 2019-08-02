@@ -1,4 +1,4 @@
-import { FormattedText } from '@airgram/core/types'
+import { FormattedText } from '@airgram/core'
 
 /** Contains Telegram terms of service */
 export class TermsOfServiceBaseModel {

@@ -1,4 +1,4 @@
-import { JsonValueUnion } from '@airgram/core/types'
+import { JsonValueUnion } from '@airgram/core'
 
 /** Represents a JSON array */
 export class JsonValueArrayBaseModel {

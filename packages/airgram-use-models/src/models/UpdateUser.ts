@@ -1,4 +1,4 @@
-import { User } from '@airgram/core/types'
+import { User } from '@airgram/core'
 
 /**
  * Some data of a user has changed. This update is guaranteed to come before the user

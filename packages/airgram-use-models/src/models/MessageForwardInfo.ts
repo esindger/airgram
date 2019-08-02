@@ -1,4 +1,4 @@
-import { MessageForwardOriginUnion } from '@airgram/core/types'
+import { MessageForwardOriginUnion } from '@airgram/core'
 
 /** Contains information about a forwarded message */
 export class MessageForwardInfoBaseModel {

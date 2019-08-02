@@ -1,4 +1,4 @@
-import { Location } from '@airgram/core/types'
+import { Location } from '@airgram/core'
 
 /** Describes a venue */
 export class VenueBaseModel {

@@ -1,4 +1,4 @@
-import { Address } from '@airgram/core/types'
+import { Address } from '@airgram/core'
 
 /** A new incoming shipping query; for bots only. Only for invoices with flexible price */
 export class UpdateNewShippingQueryBaseModel {

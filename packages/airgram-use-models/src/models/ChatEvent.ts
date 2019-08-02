@@ -1,4 +1,4 @@
-import { ChatEventActionUnion } from '@airgram/core/types'
+import { ChatEventActionUnion } from '@airgram/core'
 
 /** Represents a chat event */
 export class ChatEventBaseModel {

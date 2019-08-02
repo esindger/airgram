@@ -1,4 +1,4 @@
-import { Photo } from '@airgram/core/types'
+import { Photo } from '@airgram/core'
 
 /** Contains information about a related article */
 export class PageBlockRelatedArticleBaseModel {
