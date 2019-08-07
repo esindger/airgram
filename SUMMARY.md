@@ -1,10 +1,16 @@
 # Table of contents
 
 * [Airgram](README.md)
-* [ISSUE\_TEMPLATE](issue_template.md)
-* [packages](packages/README.md)
-  * [Using models in Airgram](packages/airgram-use-models.md)
-  * [Airgram](packages/airgram.md)
-  * [TDLib constants](packages/airgram-constants.md)
-  * [Airgram Core](packages/airgram-core.md)
+* [Introduction](introduction.md)
+* [Installation](installation.md)
+* [Getting started](getting-started.md)
+* [Basic usage](basic-usage/README.md)
+  * [Requests](basic-usage/requests.md)
+  * [Updates](basic-usage/updates.md)
+  * [Middleware](basic-usage/middleware.md)
+  * [Context](basic-usage/context.md)
+* [Advanced topics](advanced-topics/README.md)
+  * [Use constants](advanced-topics/use-constants.md)
+  * [Extend context](advanced-topics/extend-context.md)
+  * [Use models](advanced-topics/use-models.md)
 
