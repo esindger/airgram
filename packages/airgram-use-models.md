@@ -3,7 +3,8 @@
 This small utility converts plain JSON objects to class instances.
 
 ## Install
-```$bash
+
+```text
 $ npm i @airgram/use-models
 ```
 
@@ -56,4 +57,5 @@ airgram.updates.on(UPDATE.updateNewChat, async ({ update }) => {
 
 ## License
 
-The source code is licensed under GPL v3. License is available [here](/LICENSE).
+The source code is licensed under GPL v3. License is available [here](https://github.com/esindger/airgram/tree/af4613c0534a5bd4f66a1460cadcc91e407e4c7e/LICENSE/README.md).
+

@@ -1,8 +1,9 @@
 # TDLib constants
 
-This repository contains [TDLib](https://core.telegram.org/tdlib) (1.4.0) types directory.
+This repository contains [TDLib](https://core.telegram.org/tdlib) \(1.4.0\) types directory.
 
 ## Installation
+
 ```bash
 # npm
 npm install @airgram/constants
@@ -18,7 +19,7 @@ function handleUpdate (update) {
       case UPDATE.updateAuthorizationState: 
         // ...
         break
-        
+
       case UPDATE.updateNewMessage: 
         // ...
         break
@@ -46,4 +47,5 @@ airgram.on(UPDATE.updateUser, async ({ update }) => {
 
 ## License
 
-The source code is licensed under GPL v3. License is available [here](/LICENSE).
+The source code is licensed under GPL v3. License is available [here](https://github.com/esindger/airgram/tree/af4613c0534a5bd4f66a1460cadcc91e407e4c7e/LICENSE/README.md).
+
