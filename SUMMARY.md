@@ -1,7 +1,7 @@
 # Table of contents
 
 * [Airgram](README.md)
-* [docs](docs/README.md)
+* [Documentation](docs/README.md)
   * [Introduction](docs/introduction.md)
   * [Installation](docs/installation.md)
   * [Getting started](docs/getting-started.md)
