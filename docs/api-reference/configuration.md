@@ -2,7 +2,7 @@
 
 This page describes the options you can pass to `Airgram` constructor:
 
-```text
+```typescript
 import { Airgram } from 'airgram'
 
 const airgram = new Airgram({

@@ -2,6 +2,10 @@
 
 This page describes public API of an `Airgram` instance:
 
+{% hint style="danger" %}
+Не хватает on, use, emit
+{% endhint %}
+
 | Key | Type | Note |
 | :--- | :--- | :--- |
 | `api` | Object | Contains wrappers for all [TDLib methods](methods.md). |
