@@ -1,4 +1,4 @@
-# Configuration
+# Airgram configuration
 
 This page describes the options you can pass to `Airgram` constructor:
 
@@ -40,5 +40,5 @@ const airgram = new Airgram({
 | Key | Type | Note |
 | :--- | :--- | :--- |
 | `models` | `Function` | Contains function, which converts plain JSON objects to models. [Details](../advanced-topics/use-models.md). |
-| `context` | `Function`\|`Object` | Object or function that returns an object with custom context. [Details](../advanced-topics/extend-context.md). |
+| `context` | `Function`\|`Object` | Object or function that returns an object with custom context. [Details](../advanced-topics/custom-context.md). |
 
