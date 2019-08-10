@@ -14,6 +14,10 @@ interface ApiRequest {
   params?: Record<string, any>
 }
 
+interface ApiRequestOptions {
+  state?: Record<string, unknown>
+}
+
 interface ApiResponse {
   _: string
   request: ApiRequest
@@ -126,15 +130,5 @@ airgram.api.getMe().then(toObject).then((me) => {
 }).catch((error) => {
   console.error(error.message)
 })
-```
-
-### Request options
-
-At the moment, it's supported only the [`state`](operation-state.md) option:
-
-```typescript
-interface ApiRequestOptions {
-  state?: Record<string, unknown>
-}
 ```
 

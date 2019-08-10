@@ -14,7 +14,7 @@ airgram.use(async ({ getState }) => {
 })
 ```
 
-To set the initial state, pass it by the request options.
+In order to set the initial state, pass it by the request options.
 
 ```typescript
 async function downloadFile(file) {
